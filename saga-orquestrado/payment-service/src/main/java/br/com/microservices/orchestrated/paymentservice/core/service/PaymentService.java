@@ -9,9 +9,11 @@ import br.com.microservices.orchestrated.paymentservice.core.model.Payment;
 import br.com.microservices.orchestrated.paymentservice.core.producer.KafkaProducer;
 import br.com.microservices.orchestrated.paymentservice.core.repository.PaymentRepository;
 import br.com.microservices.orchestrated.paymentservice.core.utils.JsonUtil;
+import br.com.microservices.orchestrated.paymentservice.core.controller.TestController;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 
@@ -29,20 +31,35 @@ public class PaymentService {
     private final JsonUtil jsonUtil;
     private final KafkaProducer producer;
     private final PaymentRepository paymentRepository;
+    private final OutboxEventService outboxEventService;
 
+    @Transactional
     public void realizePayment(Event event) {
         try {
             checkCurrentValidation(event);
             createPendingPayment(event);
             var payment = findByOrderIdAndTransactionId(event);
             validateAmount(payment.getTotalAmount());
+
+            // Simulate failure for testing
+            if (TestController.isFailureSimulationEnabled()) {
+                log.info("TESTE: Simulando falha no payment-service");
+                throw new ValidationException("Simulated payment failure for testing");
+            }
+
             changePaymentToSuccess(payment);
             handleSuccess(event);
         } catch (Exception ex) {
             log.error("Error trying to make payment: ", ex);
             handleFailCurrentNotExecuted(event, ex.getMessage());
         }
-        producer.sendEvent(jsonUtil.toJson(event));
+        // Save to outbox instead of direct publish
+        outboxEventService.saveOutboxEvent(
+                event.getPayload().getId(),
+                "PAYMENT_PROCESSED",
+                jsonUtil.toJson(event),
+                "orchestrator"
+        );
     }
 
     private void checkCurrentValidation(Event event) {
@@ -122,6 +139,7 @@ public class PaymentService {
         addHistory(event, "Fail to realize payment: ".concat(message));
     }
 
+    @Transactional
     public void realizeRefund(Event event) {
         event.setStatus(FAIL);
         event.setSource(CURRENT_SOURCE);
@@ -131,7 +149,13 @@ public class PaymentService {
         } catch (Exception ex) {
             addHistory(event, "Rollback not executed for payment: ".concat(ex.getMessage()));
         }
-        producer.sendEvent(jsonUtil.toJson(event));
+        // Save to outbox instead of direct publish
+        outboxEventService.saveOutboxEvent(
+                event.getPayload().getId(),
+                "PAYMENT_ROLLBACK",
+                jsonUtil.toJson(event),
+                "orchestrator"
+        );
     }
 
     private void changePaymentStatusToRefund(Event event) {

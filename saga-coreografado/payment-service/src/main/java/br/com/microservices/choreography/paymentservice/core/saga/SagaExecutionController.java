@@ -2,6 +2,7 @@ package br.com.microservices.choreography.paymentservice.core.saga;
 
 import br.com.microservices.choreography.paymentservice.core.dto.Event;
 import br.com.microservices.choreography.paymentservice.core.producer.KafkaProducer;
+import br.com.microservices.choreography.paymentservice.core.service.OutboxEventService;
 import br.com.microservices.choreography.paymentservice.core.utils.JsonUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -19,6 +20,7 @@ public class SagaExecutionController {
 
     private final JsonUtil jsonUtil;
     private final KafkaProducer producer;
+    private final OutboxEventService outboxEventService;
 
     @Value("${spring.kafka.topic.inventory-success}")
     private String inventorySuccessTopic;
@@ -57,7 +59,13 @@ public class SagaExecutionController {
 
     private void sendEvent(Event event, String topic) {
         var json = jsonUtil.toJson(event);
-        producer.sendEvent(json, topic);
+        outboxEventService.saveOutboxEvent(
+                event.getPayload().getId(),
+                "PAYMENT_EVENT",
+                json,
+                topic
+        );
+        log.info("Payment event saved to outbox for topic: {}", topic);
     }
 
     private String createSagaId(Event event) {

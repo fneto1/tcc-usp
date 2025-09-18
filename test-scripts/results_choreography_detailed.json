@@ -1,0 +1,30 @@
+{
+  "pattern": "Coreografado",
+  "timestamp": "2025-09-18T00:14:22.071609",
+  "load_test": {
+    "timestamp": "2025-09-18T00:14:22.029817",
+    "pattern": "Coreografado",
+    "total_requests": 20,
+    "successful_requests": 20,
+    "failed_requests": 0,
+    "success_rate_percent": 100.0,
+    "total_duration_seconds": 2.4315407276153564,
+    "throughput_req_per_sec": 8.225237510051604,
+    "latency": {
+      "avg_ms": 20.76045274734497,
+      "median_ms": 21.98171615600586,
+      "min_ms": 9.44662094116211,
+      "max_ms": 34.55042839050293,
+      "p95_ms": 34.55042839050293
+    }
+  },
+  "failure_test": {
+    "status_code": 200,
+    "duration_ms": 22.52340316772461,
+    "response_length": 263
+  },
+  "system_metrics": {
+    "ping_ms": 19.26898956298828,
+    "service_available": true
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "pattern": "Orquestrado",
+  "timestamp": "2025-09-18T00:12:56.980719",
+  "load_test": {
+    "timestamp": "2025-09-18T00:12:56.866361",
+    "pattern": "Orquestrado",
+    "total_requests": 20,
+    "successful_requests": 20,
+    "failed_requests": 0,
+    "success_rate_percent": 100.0,
+    "total_duration_seconds": 2.338855266571045,
+    "throughput_req_per_sec": 8.551191809881272,
+    "latency": {
+      "avg_ms": 16.25267267227173,
+      "median_ms": 14.615535736083984,
+      "min_ms": 8.008241653442383,
+      "max_ms": 31.403064727783203,
+      "p95_ms": 31.403064727783203
+    }
+  },
+  "failure_test": {
+    "status_code": 200,
+    "duration_ms": 24.965524673461914,
+    "response_length": 263
+  },
+  "system_metrics": {
+    "memory_used_mb": 0,
+    "health_status": "UP"
+  }
+}

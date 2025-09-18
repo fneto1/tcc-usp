@@ -1,0 +1,75 @@
+{
+  "generated_at": "2025-09-18T00:14:37.422890",
+  "comparison": {
+    "latencia_vantagem": "Orquestrado",
+    "latencia_diferenca_percent": 27.73562334005441,
+    "throughput_vantagem": "Orquestrado",
+    "throughput_diferenca_percent": 3.811799654090483
+  },
+  "orchestrated_results": {
+    "pattern": "Orquestrado",
+    "timestamp": "2025-09-18T00:12:56.980719",
+    "load_test": {
+      "timestamp": "2025-09-18T00:12:56.866361",
+      "pattern": "Orquestrado",
+      "total_requests": 20,
+      "successful_requests": 20,
+      "failed_requests": 0,
+      "success_rate_percent": 100.0,
+      "total_duration_seconds": 2.338855266571045,
+      "throughput_req_per_sec": 8.551191809881272,
+      "latency": {
+        "avg_ms": 16.25267267227173,
+        "median_ms": 14.615535736083984,
+        "min_ms": 8.008241653442383,
+        "max_ms": 31.403064727783203,
+        "p95_ms": 31.403064727783203
+      }
+    },
+    "failure_test": {
+      "status_code": 200,
+      "duration_ms": 24.965524673461914,
+      "response_length": 263
+    },
+    "system_metrics": {
+      "memory_used_mb": 0,
+      "health_status": "UP"
+    }
+  },
+  "choreography_results": {
+    "pattern": "Coreografado",
+    "timestamp": "2025-09-18T00:14:22.071609",
+    "load_test": {
+      "timestamp": "2025-09-18T00:14:22.029817",
+      "pattern": "Coreografado",
+      "total_requests": 20,
+      "successful_requests": 20,
+      "failed_requests": 0,
+      "success_rate_percent": 100.0,
+      "total_duration_seconds": 2.4315407276153564,
+      "throughput_req_per_sec": 8.225237510051604,
+      "latency": {
+        "avg_ms": 20.76045274734497,
+        "median_ms": 21.98171615600586,
+        "min_ms": 9.44662094116211,
+        "max_ms": 34.55042839050293,
+        "p95_ms": 34.55042839050293
+      }
+    },
+    "failure_test": {
+      "status_code": 200,
+      "duration_ms": 22.52340316772461,
+      "response_length": 263
+    },
+    "system_metrics": {
+      "ping_ms": 19.26898956298828,
+      "service_available": true
+    }
+  },
+  "conclusions": {
+    "performance_winner": "Orquestrado",
+    "observability_winner": "Orquestrado",
+    "complexity_winner": "Orquestrado",
+    "scalability_winner": "Coreografado"
+  }
+}

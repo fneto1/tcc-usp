@@ -14,6 +14,7 @@ import br.com.microservices.orchestrated.inventoryservice.core.utils.JsonUtil;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 
@@ -30,7 +31,9 @@ public class InventoryService {
     private final KafkaProducer producer;
     private final InventoryRepository inventoryRepository;
     private final OrderInventoryRepository orderInventoryRepository;
+    private final OutboxEventService outboxEventService;
 
+    @Transactional
     public void updateInventory(Event event) {
         try {
             checkCurrentValidation(event);
@@ -41,7 +44,13 @@ public class InventoryService {
             log.error("Error trying to update inventory: ", ex);
             handleFailCurrentNotExecuted(event, ex.getMessage());
         }
-        producer.sendEvent(jsonUtil.toJson(event));
+        // Save to outbox instead of direct publish
+        outboxEventService.saveOutboxEvent(
+                event.getPayload().getId(),
+                "INVENTORY_UPDATED",
+                jsonUtil.toJson(event),
+                "orchestrator"
+        );
     }
 
     private void checkCurrentValidation(Event event) {
@@ -114,6 +123,7 @@ public class InventoryService {
         addHistory(event, "Fail to update inventory: ".concat(message));
     }
 
+    @Transactional
     public void rollbackInventory(Event event) {
         event.setStatus(FAIL);
         event.setSource(CURRENT_SOURCE);
@@ -123,7 +133,13 @@ public class InventoryService {
         } catch (Exception ex) {
             addHistory(event, "Rollback not executed for inventory: ".concat(ex.getMessage()));
         }
-        producer.sendEvent(jsonUtil.toJson(event));
+        // Save to outbox instead of direct publish
+        outboxEventService.saveOutboxEvent(
+                event.getPayload().getId(),
+                "INVENTORY_ROLLBACK",
+                jsonUtil.toJson(event),
+                "orchestrator"
+        );
     }
 
     private void returnInventoryToPreviousValues(Event event) {

@@ -9,6 +9,7 @@ import br.com.microservices.orchestrated.orderservice.core.utils.JsonUtil;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.Instant;
 import java.time.LocalDateTime;
@@ -25,7 +26,9 @@ public class OrderService {
     private final SagaProducer producer;
     private final JsonUtil jsonUtil;
     private final OrderRepository repository;
+    private final OutboxEventService outboxEventService;
 
+    @Transactional
     public Order createOrder(OrderRequest orderRequest) {
         var order = Order
                 .builder()
@@ -35,7 +38,18 @@ public class OrderService {
                         String.format(TRANSACTION_ID_PATTERN, Instant.now().toEpochMilli(), UUID.randomUUID()))
                 .build();
         repository.save(order);
-        producer.sendEvent(jsonUtil.toJson(createPayload(order))); //aqui começa a saga
+
+        var event = createPayload(order);
+        var eventJson = jsonUtil.toJson(event);
+
+        // Save to outbox instead of direct publish
+        outboxEventService.saveOutboxEvent(
+                order.getId(),
+                "ORDER_CREATED",
+                eventJson,
+                "start-saga"
+        );
+
         return order;
     }
 

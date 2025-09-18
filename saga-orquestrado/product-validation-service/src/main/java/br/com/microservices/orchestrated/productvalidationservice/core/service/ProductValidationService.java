@@ -12,6 +12,7 @@ import br.com.microservices.orchestrated.productvalidationservice.core.utils.Jso
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 
@@ -29,7 +30,9 @@ public class ProductValidationService {
     private final KafkaProducer producer;
     private final ProductRepository productRepository;
     private final ValidationRepository validationRepository;
+    private final OutboxEventService outboxEventService;
 
+    @Transactional
     public void validateExistingProducts(Event event) {
         try {
             checkCurrentValidation(event);
@@ -39,7 +42,13 @@ public class ProductValidationService {
             log.error("Error trying to validate product: ", ex);
             handleFailCurrentNotExecuted(event, ex.getMessage());
         }
-        producer.sendEvent(jsonUtil.toJson(event));
+        // Save to outbox instead of direct publish
+        outboxEventService.saveOutboxEvent(
+                event.getPayload().getId(),
+                "PRODUCT_VALIDATED",
+                jsonUtil.toJson(event),
+                "orchestrator"
+        );
     }
 
     private void validateProductsInformed(Event event) {
@@ -108,12 +117,19 @@ public class ProductValidationService {
         addHistory(event, "Fail to validate products: ".concat(message));
     }
 
+    @Transactional
     public void rollbackEvent(Event event) {
         changeValidationToFail(event);
         event.setStatus(FAIL);
         event.setSource(CURRENT_SOURCE);
         addHistory(event, "Rollback executed on product validation!");
-        producer.sendEvent(jsonUtil.toJson(event));
+        // Save to outbox instead of direct publish
+        outboxEventService.saveOutboxEvent(
+                event.getPayload().getId(),
+                "PRODUCT_VALIDATION_ROLLBACK",
+                jsonUtil.toJson(event),
+                "orchestrator"
+        );
     }
 
     private void changeValidationToFail(Event event) {

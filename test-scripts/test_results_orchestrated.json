@@ -1,0 +1,9 @@
+{
+  "total": 5,
+  "successful": 5,
+  "failed": 0,
+  "success_rate": 100.0,
+  "avg_latency": 22.043228149414062,
+  "min_latency": 16.029834747314453,
+  "max_latency": 24.91307258605957
+}
