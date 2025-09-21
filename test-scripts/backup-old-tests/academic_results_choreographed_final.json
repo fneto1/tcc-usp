@@ -1,0 +1,156 @@
+{
+  "pattern_name": "Choreographed",
+  "test_suite_version": "2.0_academic",
+  "execution_timestamp": "2025-09-18T11:57:08.665168",
+  "test_results": {
+    "load_tests": [
+      {
+        "request_count": 20,
+        "successful_requests": 20,
+        "success_rate": 100.0,
+        "total_duration_s": 1.3560094833374023,
+        "throughput_req_s": 14.749159386980185,
+        "latency_avg_ms": 17.10977554321289,
+        "latency_median_ms": 21.64602279663086,
+        "latency_std_ms": 10.464091473630623,
+        "latency_min_ms": 4.508018493652344,
+        "latency_max_ms": 29.432296752929688,
+        "latency_p95_ms": 28.480780124664307,
+        "timestamp": "2025-09-18T11:56:28.009405"
+      },
+      {
+        "request_count": 40,
+        "successful_requests": 40,
+        "success_rate": 100.0,
+        "total_duration_s": 2.671004295349121,
+        "throughput_req_s": 14.975640462147474,
+        "latency_avg_ms": 16.030395030975342,
+        "latency_median_ms": 16.816139221191406,
+        "latency_std_ms": 10.111677037065254,
+        "latency_min_ms": 4.508495330810547,
+        "latency_max_ms": 28.178930282592773,
+        "latency_p95_ms": 27.854669094085693,
+        "timestamp": "2025-09-18T11:56:30.680409"
+      },
+      {
+        "request_count": 60,
+        "successful_requests": 60,
+        "success_rate": 100.0,
+        "total_duration_s": 4.139343976974487,
+        "throughput_req_s": 14.4950505040789,
+        "latency_avg_ms": 18.24852228164673,
+        "latency_median_ms": 21.034836769104004,
+        "latency_std_ms": 9.600143669577259,
+        "latency_min_ms": 4.508733749389648,
+        "latency_max_ms": 29.07848358154297,
+        "latency_p95_ms": 28.083240985870358,
+        "timestamp": "2025-09-18T11:56:34.819754"
+      },
+      {
+        "request_count": 80,
+        "successful_requests": 80,
+        "success_rate": 100.0,
+        "total_duration_s": 5.13403582572937,
+        "throughput_req_s": 15.582283161928412,
+        "latency_avg_ms": 13.409405946731567,
+        "latency_median_ms": 5.7364702224731445,
+        "latency_std_ms": 10.024519491361634,
+        "latency_min_ms": 4.167318344116211,
+        "latency_max_ms": 28.405427932739258,
+        "latency_p95_ms": 27.734696865081787,
+        "timestamp": "2025-09-18T11:56:39.953789"
+      },
+      {
+        "request_count": 100,
+        "successful_requests": 100,
+        "success_rate": 100.0,
+        "total_duration_s": 6.76338791847229,
+        "throughput_req_s": 14.78548934430896,
+        "latency_avg_ms": 16.88363790512085,
+        "latency_median_ms": 18.8370943069458,
+        "latency_std_ms": 9.996602187760299,
+        "latency_min_ms": 4.004955291748047,
+        "latency_max_ms": 28.589248657226562,
+        "latency_p95_ms": 28.007996082305908,
+        "timestamp": "2025-09-18T11:56:46.717177"
+      }
+    ],
+    "stress_tests": [],
+    "concurrency_tests": [
+      {
+        "total_requests": 40,
+        "successful_requests": 40,
+        "success_rate": 100.0,
+        "total_duration_s": 0.5684759616851807,
+        "effective_throughput_req_s": 70.36357330119056,
+        "latency_avg_ms": 7.6828062534332275,
+        "latency_std_ms": 3.7374984980351793,
+        "latency_p95_ms": 12.274050712585437,
+        "concurrency_level": 8,
+        "timestamp": "2025-09-18T11:56:47.286188"
+      }
+    ],
+    "resilience_tests": [
+      {
+        "scenario_name": "Normal Operation",
+        "iterations": 3,
+        "successful_iterations": 3,
+        "success_rate": 100.0,
+        "avg_duration_ms": 19.228696823120117,
+        "timestamp": "2025-09-18T11:56:50.346099"
+      },
+      {
+        "scenario_name": "Inventory Overflow",
+        "iterations": 3,
+        "successful_iterations": 3,
+        "success_rate": 100.0,
+        "avg_duration_ms": 20.351171493530273,
+        "timestamp": "2025-09-18T11:56:53.409371"
+      },
+      {
+        "scenario_name": "Invalid Product",
+        "iterations": 3,
+        "successful_iterations": 3,
+        "success_rate": 100.0,
+        "avg_duration_ms": 26.422500610351562,
+        "timestamp": "2025-09-18T11:56:56.490548"
+      },
+      {
+        "scenario_name": "Zero Quantity",
+        "iterations": 3,
+        "successful_iterations": 3,
+        "success_rate": 100.0,
+        "avg_duration_ms": 26.78394317626953,
+        "timestamp": "2025-09-18T11:56:59.572689"
+      },
+      {
+        "scenario_name": "High Value Transaction",
+        "iterations": 3,
+        "successful_iterations": 3,
+        "success_rate": 100.0,
+        "avg_duration_ms": 20.337899525960285,
+        "timestamp": "2025-09-18T11:57:02.635538"
+      }
+    ],
+    "latency_distribution": {
+      "sample_count": 50,
+      "mean_ms": 19.821243286132812,
+      "median_ms": 23.451805114746094,
+      "std_dev_ms": 7.87230618652535,
+      "min_ms": 4.512786865234375,
+      "max_ms": 28.514623641967773,
+      "p95_ms": 26.516354084014893,
+      "p99_ms": 27.990896701812744,
+      "coefficient_of_variation": 0.3971651057849087,
+      "timestamp": "2025-09-18T11:57:08.665168"
+    }
+  },
+  "summary": {
+    "load_test_peak_throughput": 15.582283161928412,
+    "concurrent_max_throughput": 70.36357330119056,
+    "resilience_overall_success_rate": 100.0,
+    "latency_p95_ms": 26.516354084014893,
+    "latency_avg_ms": 19.821243286132812,
+    "latency_std_dev_ms": 7.87230618652535
+  }
+}

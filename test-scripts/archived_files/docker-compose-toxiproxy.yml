@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  toxiproxy:
+    image: shopify/toxiproxy:latest
+    container_name: toxiproxy-server
+    ports:
+      - "8474:8474"  # API port
+      - "8475:8475"  # Metrics port
+      - "8081:8080"  # Proxy port for order service (mapped to avoid conflict)
+    command: ["toxiproxy-server", "-host", "0.0.0.0"]
+    networks:
+      - saga-test-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:8474/version"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  toxiproxy-cli:
+    image: shopify/toxiproxy:latest
+    container_name: toxiproxy-cli
+    depends_on:
+      - toxiproxy
+    networks:
+      - saga-test-network
+    entrypoint: ["/bin/sh"]
+    command: ["-c", "while true; do sleep 3600; done"]
+    environment:
+      - TOXIPROXY_URL=http://toxiproxy:8474
+
+networks:
+  saga-test-network:
+    driver: bridge
+    external: true

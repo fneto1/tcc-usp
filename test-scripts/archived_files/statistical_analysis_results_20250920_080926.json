@@ -1,0 +1,34 @@
+{
+  "analysis_timestamp": "2025-09-20T08:09:24.878155",
+  "significance_level": 0.05,
+  "sample_sizes": {
+    "orchestrated": 60,
+    "choreographed": 60
+  },
+  "comparisons": {
+    "latencies": {
+      "metric": "latencies",
+      "descriptive_stats": {
+        "orchestrated": {
+          "mean": 16.123651047547657,
+          "median": 15.815693140029907,
+          "std_dev": 1.9715819255604743,
+          "min": 12.880316972732544,
+          "max": 28.331363201141357,
+          "sample_size": 60
+        },
+        "choreographed": {
+          "mean": 16.032735486825306,
+          "median": 15.689485669136047,
+          "std_dev": 3.025420968958388,
+          "min": 12.704770565032959,
+          "max": 37.102415561676025,
+          "sample_size": 60
+        }
+      },
+      "normality_tests": {
+        "orchestrated": {
+          "test": "shapiro_wilk",
+          "statistic": 0.6554973935290097,
+          "p_value": 1.347712408228101e-10,
+          "is_normal": 

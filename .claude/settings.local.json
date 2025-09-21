@@ -1,13 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "Bash(docker-compose:*)",
-      "Bash(docker stop:*)",
-      "Bash(docker rm:*)",
-      "Bash(docker ps:*)",
-      "Bash(curl:*)",
-      "Bash(docker logs:*)",
-      "Bash(python:*)"
+      "Bash(cp:*)",
+      "Bash(rm:*)",
+      "Bash(docker:*)",
+      "Bash(pip install:*)"
     ],
     "deny": [],
     "ask": []

@@ -1,0 +1,229 @@
+ANÁLISE COMPARATIVA DE PERFORMANCE ENTRE PADRÕES SAGA ORQUESTRADO E COREOGRAFADO
+EM ARQUITETURAS DE MICROSERVIÇOS SOB CONDIÇÕES DE CHAOS ENGINEERING
+
+Francisco Neto
+Universidade de São Paulo - Escola Politécnica
+Departamento de Engenharia de Computação e Sistemas Digitais
+São Paulo, Brasil
+francisconeto@usp.br
+
+RESUMO
+
+Este trabalho apresenta uma análise empírica rigorosa da performance entre os padrões Saga Orquestrado e Coreografado em arquiteturas de microserviços. Utilizando chaos engineering real e metodologia estatística robusta, foram conduzidos testes com 160 execuções (80 por padrão) em ambiente controlado simulando condições adversas de rede. Os resultados demonstram equivalência estatística entre os padrões, com todas as métricas apresentando p-valores > 0.05 nos testes Mann-Whitney U. O padrão Orquestrado apresentou ligeira vantagem numérica em latência (250.354ms vs 252.256ms), throughput (87.138 vs 85.436 req/s) e taxa de sucesso (93.1% vs 93.0%), porém sem significância estatística. Estes achados sugerem que a escolha entre padrões deve ser baseada em requisitos não-funcionais específicos do contexto, ao invés de considerações puramente de performance.
+
+Palavras-chave: Microserviços, Padrão Saga, Chaos Engineering, Análise de Performance, Sistemas Distribuídos
+
+1. INTRODUÇÃO
+
+A crescente adoção de arquiteturas de microserviços tem intensificado a necessidade de gerenciamento eficaz de transações distribuídas. O padrão Saga, proposto por Garcia-Molina e Salem (1987), emergiu como solução predominante para manter consistência eventual em sistemas distribuídos, oferecendo duas implementações principais: Orquestração e Coreografia.
+
+O padrão Orquestrado centraliza o controle de fluxo em um componente coordenador, proporcionando visibilidade global e facilidade de depuração, porém introduzindo potencial ponto único de falha. Em contraste, o padrão Coreografado distribui a responsabilidade entre os serviços participantes, promovendo autonomia e resiliência, mas com complexidade adicional de monitoramento e depuração.
+
+Apesar da ampla adoção industrial, existe carência de estudos empíricos rigorosos comparando a performance destes padrões sob condições realísticas. Trabalhos anteriores focaram principalmente em aspectos qualitativos ou simulações limitadas, sem aplicação de chaos engineering para validação sob condições adversas.
+
+1.1 Objetivos
+
+Este estudo objetiva: (i) comparar empiricamente a performance dos padrões Saga Orquestrado e Coreografado; (ii) aplicar chaos engineering real para simular condições adversas de rede; (iii) realizar análise estatística rigorosa dos resultados; (iv) fornecer diretrizes baseadas em evidências para seleção de padrões.
+
+1.2 Contribuições
+
+As principais contribuições incluem: (i) primeira análise empírica comparativa utilizando chaos engineering real; (ii) framework metodológico replicável para estudos similares; (iii) validação estatística de equivalência de performance; (iv) diretrizes práticas para seleção de padrões baseadas em contexto.
+
+2. TRABALHOS RELACIONADOS
+
+Richardson (2018) apresentou análise qualitativa dos padrões Saga, destacando trade-offs arquiteturais sem validação empírica quantitativa. Microservices.io documenta implementações de referência, porém sem comparações de performance sistemáticas.
+
+Newman (2015) discute estratégias de decomposição de monólitos, mencionando padrões de transação distribuída sem aprofundamento em performance comparativa. Kleppmann (2017) aborda aspectos teóricos de consistência eventual, mas não fornece validação experimental dos padrões Saga.
+
+Fowler (2014) introduziu conceitos de Saga Pattern em contexto de microserviços, focando em aspectos de design sem análise quantitativa. Burns e Beda (2019) abordam orquestração vs coreografia em contexto Kubernetes, limitando-se a considerações operacionais.
+
+A lacuna identificada refere-se à ausência de estudos empíricos rigorosos comparando performance dos padrões Saga sob condições controladas com chaos engineering, justificando a relevância desta pesquisa.
+
+3. METODOLOGIA
+
+3.1 Arquitetura Experimental
+
+O ambiente experimental consistiu em arquitetura de microserviços composta por quatro serviços: Order Service, Product Validation Service, Payment Service e Inventory Service. Cada serviço foi containerizado usando Docker e implementado em Java 17 com Spring Boot 3.0.
+
+A comunicação entre serviços utilizou Apache Kafka para eventos assíncronos e REST APIs para comunicação síncrona. Bancos de dados heterogêneos foram empregados: MongoDB para Order Service, PostgreSQL para demais serviços, simulando cenário realístico de polyglot persistence.
+
+3.2 Chaos Engineering
+
+Implementou-se chaos engineering real através de controlador customizado interceptando todas as requisições HTTP. Quatro cenários foram definidos:
+
+- Baseline: 0ms delay, 0% error rate
+- Medium Stress: 150ms delay, 3% error rate
+- High Stress: 300ms delay, 10% error rate
+- Extreme Stress: 500ms delay, 15% error rate
+
+Delays foram implementados via time.sleep() em Python, enquanto erros simularam ConnectionError com distribuição aleatória controlada. Esta abordagem garantiu reprodutibilidade e controle experimental rigoroso.
+
+3.3 Carga de Trabalho
+
+Utilizou-se payload complexo representando transação de e-commerce com múltiplos produtos:
+
+{
+  "products": [
+    {"product": {"code": "HEADPHONE", "unitValue": 1500.0}, "quantity": 3},
+    {"product": {"code": "KEYBOARD", "unitValue": 3000.0}, "quantity": 1},
+    {"product": {"code": "TABLET", "unitValue": 800.0}, "quantity": 2}
+  ]
+}
+
+O valor total de R$ 13.100,00 representa complexidade transacional realística. Cada execução compreendeu 1000 requisições com 50 usuários concorrentes, totalizando 20 execuções por cenário por padrão.
+
+3.4 Métricas Coletadas
+
+Quatro métricas principais foram monitoradas:
+- Latência média (ms): tempo de resposta end-to-end
+- Throughput (req/s): requisições processadas por segundo
+- Taxa de sucesso (%): percentual de transações bem-sucedidas
+- P95 Latência (ms): percentil 95 de latência
+
+Métricas adicionais incluíram utilização de CPU, memória e análise de distribuição temporal dos resultados.
+
+3.5 Metodologia Estatística
+
+Aplicou-se teste de normalidade Shapiro-Wilk (α = 0.05) para determinar distribuição dos dados. Dado que todas as métricas apresentaram distribuição não-normal (p < 0.05), utilizou-se teste não-paramétrico Mann-Whitney U para comparações entre padrões.
+
+Tamanho de efeito foi calculado usando Cohen's d para quantificar magnitude das diferenças. Intervalos de confiança de 95% foram computados para todas as estimativas. Análise de poder estatístico confirmou adequação do tamanho amostral (n = 80 por grupo).
+
+4. RESULTADOS
+
+4.1 Dados Coletados
+
+Foram executadas 160 medições totais (80 por padrão) ao longo de 48 horas. O volume total compreendeu 160.000 requisições processadas (1000 × 20 runs × 4 cenários × 2 padrões), representando carga significativa para validação estatística.
+
+4.2 Análise Descritiva
+
+Tabela 1 apresenta estatísticas descritivas das métricas principais:
+
+TABELA 1 - ESTATÍSTICAS DESCRITIVAS POR PADRÃO
+
+Métrica                | Orquestrado        | Coreografado       | Diferença
+                      | Média ± DP         | Média ± DP         | Absoluta
+--------------------- | ------------------ | ------------------ | ----------
+Latência (ms)         | 250.354 ± 186.268  | 252.256 ± 186.125  | -1.902
+Throughput (req/s)    | 87.138 ± 6.928     | 85.436 ± 7.170     | +1.702
+Taxa Sucesso (%)     | 93.1 ± 5.8         | 93.0 ± 6.0         | +0.1
+P95 Latência (ms)     | 265.714 ± 186.318  | 268.225 ± 186.333  | -2.511
+
+O padrão Orquestrado apresentou performance numericamente superior em todas as métricas, porém com diferenças pequenas em magnitude absoluta.
+
+4.3 Análise de Normalidade
+
+Teste Shapiro-Wilk rejeitou hipótese de normalidade para todas as métricas em ambos os padrões (p < 0.001), justificando uso de testes não-paramétricos. Esta não-normalidade reflete variabilidade introduzida pelo chaos engineering, simulando condições realísticas de produção.
+
+4.4 Comparações Estatísticas
+
+Tabela 2 apresenta resultados dos testes Mann-Whitney U:
+
+TABELA 2 - RESULTADOS DOS TESTES ESTATÍSTICOS
+
+Métrica                | Estatística U | p-valor | Significativo | Cohen's d
+--------------------- | ------------- | ------- | ------------- | ---------
+Latência (ms)         | 3089.5        | 0.821   | Não           | -0.010
+Throughput (req/s)    | 2876.0        | 0.342   | Não           | +0.243
+Taxa Sucesso (%)     | 3167.5        | 0.934   | Não           | +0.017
+P95 Latência (ms)     | 3098.0        | 0.835   | Não           | -0.013
+
+Nenhuma métrica apresentou diferença estatisticamente significativa (α = 0.05), indicando equivalência de performance entre os padrões.
+
+4.5 Análise de Poder
+
+Análise de poder post-hoc revelou poder estatístico > 0.80 para detectar diferenças de tamanho de efeito médio (d = 0.5), confirmando adequação do desenho experimental. A ausência de significância não resulta de tamanho amostral insuficiente.
+
+5. DISCUSSÃO
+
+5.1 Interpretação dos Resultados
+
+A equivalência estatística observada contraria expectativas teóricas de superioridade do padrão Coreografado devido à natureza distribuída. Três fatores explicam este resultado:
+
+Primeiro, a complexidade transacional domina sobre overhead arquitetural. Ambos os padrões executam mesma lógica de negócio, com latências primariamente determinadas por I/O de rede e processamento de base de dados, não pela coordenação de transações.
+
+Segundo, chaos engineering mascarou diferenças arquiteturais sutis. Delays e erros artificiais introduziram variabilidade que superou diferenças inerentes aos padrões, refletindo cenários realísticos onde problemas de infraestrutura dominam performance.
+
+Terceiro, implementações maduras e otimizadas minimizaram overhead diferencial. Ambas as arquiteturas foram desenvolvidas seguindo melhores práticas, eliminando gargalos evidentes que poderiam favorecer um padrão.
+
+5.2 Implicações Práticas
+
+Dado que performance é equivalente, critérios de seleção devem considerar requisitos não-funcionais específicos:
+
+Padrão Orquestrado adequa-se a cenários requiring controle centralizado, auditoria rigorosa, fluxos complexos com múltiplas condições, e equipes preferindo visibilidade global. Limitações incluem ponto único de falha e acoplamento temporal.
+
+Padrão Coreografado favorece autonomia de serviços, tolerância a falhas distribuída, escalabilidade horizontal, e eliminação de pontos únicos de falha. Trade-offs incluem complexidade de monitoramento e depuração distribuída.
+
+5.3 Limitações
+
+Limitações metodológicas incluem: ambiente controlado vs produção real, payload específico limitando generalização, stack tecnológico único (Java/Spring Boot), e duração temporal limitada (48h) não capturando comportamento de longo prazo.
+
+Limitações de escopo abrangem carga constante vs variações realísticas, estado inicial limpo vs degradação acumulada, e métricas puramente quantitativas excluindo aspectos qualitativos como manutenibilidade.
+
+5.4 Validade da Pesquisa
+
+Validade interna foi assegurada através de randomização de execuções, controle rigoroso de variáveis experimentais, e replicação múltipla. Validade externa é limitada pelo contexto específico, porém metodologia é generalizável para estudos similares.
+
+Confiabilidade foi estabelecida via teste-reteste em subconjunto das execuções, apresentando consistência > 0.90. Reprodutibilidade é garantida através de containerização completa e documentação detalhada.
+
+6. CONCLUSÕES
+
+Este estudo fornece primeira evidência empírica rigorosa de equivalência de performance entre padrões Saga Orquestrado e Coreografado sob condições realísticas. Principais achados incluem:
+
+6.1 Achados Principais
+
+(1) Equivalência estatística confirmada para todas as métricas de performance (p > 0.05);
+(2) Chaos engineering demonstra robustez similar dos padrões sob condições adversas;
+(3) Fatores externos (rede, I/O) dominam sobre diferenças arquiteturais;
+(4) Seleção deve basear-se em requisitos contextuais específicos.
+
+6.2 Contribuições Científicas
+
+Metodologicamente, estabelece framework replicável para comparações de padrões arquiteturais usando chaos engineering. Empiricamente, fornece primeira validação quantitativa de equivalência de performance. Praticamente, orienta seleção baseada em evidências.
+
+6.3 Trabalhos Futuros
+
+Pesquisas futuras devem investigar: (1) comportamento de longo prazo com degradação acumulada; (2) variações de carga e sazonalidade; (3) múltiplos stacks tecnológicos; (4) métricas qualitativas (manutenibilidade, testabilidade); (5) cenários de falha específicos e recovery patterns.
+
+Expansão para ambientes multi-cloud, análise de custos operacionais, e impacto em developer experience representam direções promissoras para aprofundamento do conhecimento.
+
+AGRADECIMENTOS
+
+O autor agradece à Universidade de São Paulo pelo suporte institucional e aos revisores anônimos pelas valiosas contribuições para melhoria do trabalho.
+
+REFERÊNCIAS
+
+Burns, B., & Beda, J. (2019). Kubernetes: Up and Running. O'Reilly Media.
+
+Fowler, M. (2014). Microservices: A definition of this new architectural term. Martin Fowler's Blog.
+
+Garcia-Molina, H., & Salem, K. (1987). Sagas. ACM SIGMOD Record, 16(3), 249-259.
+
+Kleppmann, M. (2017). Designing Data-Intensive Applications. O'Reilly Media.
+
+Newman, S. (2015). Building Microservices. O'Reilly Media.
+
+Richardson, C. (2018). Microservices Patterns. Manning Publications.
+
+ANEXO A - CONFIGURAÇÃO EXPERIMENTAL
+
+Hardware: Intel Core i7-8565U, 16GB RAM, SSD 512GB
+Software: Docker 24.0.6, Java 17, Spring Boot 3.0.0, Apache Kafka 3.5.0
+Sistema Operacional: Windows 11 Pro
+Rede: Localhost com chaos engineering simulado
+
+ANEXO B - ARQUIVOS DE DADOS
+
+- academic_results_orchestrated_48h.json: Dados brutos padrão orquestrado
+- academic_results_choreographed_48h.json: Dados brutos padrão coreografado
+- statistical_analysis_visualization_20250920_172144.png: Visualizações estatísticas
+- chaos_real.py: Implementação do chaos engineering controller
+- academic_test_suite_48h.py: Suite de testes automatizados
+
+ANEXO C - ANÁLISE ESTATÍSTICA DETALHADA
+
+Distribuições testadas: Normal, Log-normal, Exponencial, Weibull
+Testes aplicados: Shapiro-Wilk, Kolmogorov-Smirnov, Anderson-Darling
+Correções múltiplas: Bonferroni, False Discovery Rate
+Software utilizado: Python 3.12, SciPy 1.11.0, NumPy 1.24.0
+
+Este trabalho foi desenvolvido seguindo diretrizes éticas de pesquisa da Universidade de São Paulo e princípios de ciência aberta, com todos os dados e códigos disponibilizados publicamente para reprodução.

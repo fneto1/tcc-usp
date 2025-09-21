@@ -1,0 +1,5349 @@
+{
+  "pattern_name": "orchestrated",
+  "test_suite_version": "48h_optimized",
+  "execution_start": "2025-09-20T00:12:56.019151",
+  "scenarios": {
+    "baseline_run_1": {
+      "scenario_name": "baseline",
+      "chaos_config": {
+        "scenario_applied": "baseline",
+        "timestamp": "2025-09-20T00:12:58.023586",
+        "config": {
+          "name": "Baseline",
+          "latency_ms": 0,
+          "packet_loss": 0.0,
+          "description": "Normal network conditions"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "baseline",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.1142618656158447,
+          "throughput_req_s": 94.59566161249556,
+          "latency_stats": {
+            "mean_ms": 28.331363201141357,
+            "median_ms": 21.481990814208984,
+            "std_dev_ms": 35.843352552569236,
+            "min_ms": 7.393836975097656,
+            "max_ms": 226.2883186340332,
+            "p95_ms": 45.1421022415146,
+            "p99_ms": 209.36235904693598
+          },
+          "timestamp": "2025-09-20T00:13:30.140298"
+        },
+        "concurrent_test": {
+          "scenario": "baseline",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.1892106533050537,
+          "effective_throughput_req_s": 84.08939133035854,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 13.399875164031982,
+            "std_dev_ms": 4.258726177736291,
+            "p95_ms": 21.878135204315182
+          },
+          "timestamp": "2025-09-20T00:13:31.331147"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 16.41535758972168,
+            "max_duration_ms": 31.368017196655273,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:13:33.918042"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 15.214252471923828,
+            "max_duration_ms": 23.871183395385742,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:13:36.501453"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 18.983125686645508,
+            "max_duration_ms": 28.85723114013672,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:13:39.101581"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 16.527318954467773,
+            "max_duration_ms": 27.102231979370117,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:13:41.692124"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:13:28.023870",
+      "execution_end": "2025-09-20T00:13:41.692124"
+    },
+    "medium_stress_run_1": {
+      "scenario_name": "medium_stress",
+      "chaos_config": {
+        "scenario_applied": "medium_stress",
+        "timestamp": "2025-09-20T00:13:53.694613",
+        "config": {
+          "name": "Medium Stress",
+          "latency_ms": 150,
+          "packet_loss": 0.03,
+          "description": "Moderate network degradation"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "medium_stress",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.085541009902954,
+          "throughput_req_s": 95.8983779510078,
+          "latency_stats": {
+            "mean_ms": 18.451261520385742,
+            "median_ms": 19.38807964324951,
+            "std_dev_ms": 8.545737132170395,
+            "min_ms": 5.761861801147461,
+            "max_ms": 37.19305992126465,
+            "p95_ms": 30.48049211502075,
+            "p99_ms": 33.75232696533201
+          },
+          "timestamp": "2025-09-20T00:14:25.781760"
+        },
+        "concurrent_test": {
+          "scenario": "medium_stress",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.21732497215271,
+          "effective_throughput_req_s": 82.14733311776281,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 12.732012271881104,
+            "std_dev_ms": 7.543839415449169,
+            "p95_ms": 27.965128421783444
+          },
+          "timestamp": "2025-09-20T00:14:26.999616"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 13.685274124145508,
+            "max_duration_ms": 23.792266845703125,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:14:29.574143"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 14.04581069946289,
+            "max_duration_ms": 20.66516876220703,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:14:32.151329"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 26.578330993652344,
+            "max_duration_ms": 29.868125915527344,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:14:34.789842"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 10.629415512084961,
+            "max_duration_ms": 20.23172378540039,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:14:37.350692"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:14:23.695158",
+      "execution_end": "2025-09-20T00:14:37.350692"
+    },
+    "high_stress_run_1": {
+      "scenario_name": "high_stress",
+      "chaos_config": {
+        "scenario_applied": "high_stress",
+        "timestamp": "2025-09-20T00:14:49.352948",
+        "config": {
+          "name": "High Stress",
+          "latency_ms": 300,
+          "packet_loss": 0.1,
+          "description": "Severe network conditions"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "high_stress",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.0916638374328613,
+          "throughput_req_s": 95.61765921500263,
+          "latency_stats": {
+            "mean_ms": 17.566843032836914,
+            "median_ms": 18.72420310974121,
+            "std_dev_ms": 8.215296912985101,
+            "min_ms": 4.007577896118164,
+            "max_ms": 33.16307067871094,
+            "p95_ms": 29.498338699340817,
+            "p99_ms": 30.17852783203125
+          },
+          "timestamp": "2025-09-20T00:15:21.445704"
+        },
+        "concurrent_test": {
+          "scenario": "high_stress",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.1661407947540283,
+          "effective_throughput_req_s": 85.75293862444182,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 10.841360092163086,
+            "std_dev_ms": 5.674081748701872,
+            "p95_ms": 24.892401695251465
+          },
+          "timestamp": "2025-09-20T00:15:22.612375"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 19.445466995239258,
+            "max_duration_ms": 29.217243194580078,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:15:25.214794"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 19.87481117248535,
+            "max_duration_ms": 28.316259384155273,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:15:27.818894"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 14.563894271850586,
+            "max_duration_ms": 28.5646915435791,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:15:30.396514"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 20.166301727294922,
+            "max_duration_ms": 28.227806091308594,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:15:33.004498"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:15:19.353126",
+      "execution_end": "2025-09-20T00:15:33.004498"
+    },
+    "baseline_run_2": {
+      "scenario_name": "baseline",
+      "chaos_config": {
+        "scenario_applied": "baseline",
+        "timestamp": "2025-09-20T00:15:45.007681",
+        "config": {
+          "name": "Baseline",
+          "latency_ms": 0,
+          "packet_loss": 0.0,
+          "description": "Normal network conditions"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "baseline",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.088240146636963,
+          "throughput_req_s": 95.77442533230335,
+          "latency_stats": {
+            "mean_ms": 17.870056629180908,
+            "median_ms": 19.290685653686523,
+            "std_dev_ms": 8.57872787208372,
+            "min_ms": 4.183292388916016,
+            "max_ms": 36.022186279296875,
+            "p95_ms": 29.453897476196286,
+            "p99_ms": 31.19164943695068
+          },
+          "timestamp": "2025-09-20T00:16:17.097288"
+        },
+        "concurrent_test": {
+          "scenario": "baseline",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.195000410079956,
+          "effective_throughput_req_s": 83.68197965162967,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 11.602647304534912,
+            "std_dev_ms": 7.822476089669272,
+            "p95_ms": 28.197574615478516
+          },
+          "timestamp": "2025-09-20T00:16:18.292814"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 16.800594329833984,
+            "max_duration_ms": 29.044628143310547,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:16:20.883117"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 17.95330047607422,
+            "max_duration_ms": 26.12137794494629,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:16:23.478591"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 16.251134872436523,
+            "max_duration_ms": 29.364824295043945,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:16:26.063878"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 15.87686538696289,
+            "max_duration_ms": 22.519588470458984,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:16:28.649783"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:16:15.008002",
+      "execution_end": "2025-09-20T00:16:28.649783"
+    },
+    "medium_stress_run_2": {
+      "scenario_name": "medium_stress",
+      "chaos_config": {
+        "scenario_applied": "medium_stress",
+        "timestamp": "2025-09-20T00:16:40.652562",
+        "config": {
+          "name": "Medium Stress",
+          "latency_ms": 150,
+          "packet_loss": 0.03,
+          "description": "Moderate network degradation"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "medium_stress",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.087968111038208,
+          "throughput_req_s": 95.7869035176755,
+          "latency_stats": {
+            "mean_ms": 16.780117750167847,
+            "median_ms": 18.72551441192627,
+            "std_dev_ms": 8.923197365915136,
+            "min_ms": 3.646373748779297,
+            "max_ms": 33.17570686340332,
+            "p95_ms": 29.107141494750977,
+            "p99_ms": 31.00692033767699
+          },
+          "timestamp": "2025-09-20T00:17:12.741551"
+        },
+        "concurrent_test": {
+          "scenario": "medium_stress",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.1856045722961426,
+          "effective_throughput_req_s": 84.34515380311962,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 9.754619598388672,
+            "std_dev_ms": 5.237409756010936,
+            "p95_ms": 22.403287887573242
+          },
+          "timestamp": "2025-09-20T00:17:13.928199"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 20.443105697631836,
+            "max_duration_ms": 28.02562713623047,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:17:16.535831"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 9.921693801879883,
+            "max_duration_ms": 22.644996643066406,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:17:19.091318"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 15.589761734008789,
+            "max_duration_ms": 27.412891387939453,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:17:21.673373"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 24.742507934570312,
+            "max_duration_ms": 28.603315353393555,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:17:24.302147"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:17:10.653051",
+      "execution_end": "2025-09-20T00:17:24.302147"
+    },
+    "high_stress_run_2": {
+      "scenario_name": "high_stress",
+      "chaos_config": {
+        "scenario_applied": "high_stress",
+        "timestamp": "2025-09-20T00:17:36.305021",
+        "config": {
+          "name": "High Stress",
+          "latency_ms": 300,
+          "packet_loss": 0.1,
+          "description": "Severe network conditions"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "high_stress",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.081103801727295,
+          "throughput_req_s": 96.10284688058425,
+          "latency_stats": {
+            "mean_ms": 16.423479318618774,
+            "median_ms": 18.13030242919922,
+            "std_dev_ms": 8.946436543978068,
+            "min_ms": 4.218339920043945,
+            "max_ms": 33.3554744720459,
+            "p95_ms": 28.380846977233883,
+            "p99_ms": 30.47811031341552
+          },
+          "timestamp": "2025-09-20T00:18:08.387347"
+        },
+        "concurrent_test": {
+          "scenario": "high_stress",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.2275865077972412,
+          "effective_throughput_req_s": 81.46065419001563,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 12.453782558441162,
+            "std_dev_ms": 7.844724881835333,
+            "p95_ms": 26.698732376098633
+          },
+          "timestamp": "2025-09-20T00:18:09.615458"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 18.782424926757812,
+            "max_duration_ms": 29.956340789794922,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:18:12.214942"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 9.266090393066406,
+            "max_duration_ms": 23.142337799072266,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:18:14.766185"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 12.206792831420898,
+            "max_duration_ms": 25.286436080932617,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:18:17.332394"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 9.7686767578125,
+            "max_duration_ms": 22.348880767822266,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:18:19.886262"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:18:06.305220",
+      "execution_end": "2025-09-20T00:18:19.886262"
+    },
+    "baseline_run_3": {
+      "scenario_name": "baseline",
+      "chaos_config": {
+        "scenario_applied": "baseline",
+        "timestamp": "2025-09-20T00:18:31.889281",
+        "config": {
+          "name": "Baseline",
+          "latency_ms": 0,
+          "packet_loss": 0.0,
+          "description": "Normal network conditions"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "baseline",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.077512741088867,
+          "throughput_req_s": 96.26896434588213,
+          "latency_stats": {
+            "mean_ms": 17.9424250125885,
+            "median_ms": 18.787622451782227,
+            "std_dev_ms": 8.265523022199472,
+            "min_ms": 3.3392906188964844,
+            "max_ms": 29.439926147460938,
+            "p95_ms": 28.641843795776367,
+            "p99_ms": 29.209914207458496
+          },
+          "timestamp": "2025-09-20T00:19:03.967503"
+        },
+        "concurrent_test": {
+          "scenario": "baseline",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.1943202018737793,
+          "effective_throughput_req_s": 83.7296395414807,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 11.795740127563477,
+            "std_dev_ms": 7.409698963251719,
+            "p95_ms": 24.9234676361084
+          },
+          "timestamp": "2025-09-20T00:19:05.163349"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 11.711883544921875,
+            "max_duration_ms": 23.925304412841797,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:19:07.727508"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 11.470985412597656,
+            "max_duration_ms": 23.024559020996094,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:19:10.289884"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 13.977193832397461,
+            "max_duration_ms": 26.688098907470703,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:19:12.864349"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 22.005701065063477,
+            "max_duration_ms": 29.709339141845703,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:19:15.479113"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:19:01.889466",
+      "execution_end": "2025-09-20T00:19:15.479113"
+    },
+    "medium_stress_run_3": {
+      "scenario_name": "medium_stress",
+      "chaos_config": {
+        "scenario_applied": "medium_stress",
+        "timestamp": "2025-09-20T00:19:27.482796",
+        "config": {
+          "name": "Medium Stress",
+          "latency_ms": 150,
+          "packet_loss": 0.03,
+          "description": "Moderate network degradation"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "medium_stress",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.0850815773010254,
+          "throughput_req_s": 95.91950846301387,
+          "latency_stats": {
+            "mean_ms": 16.962260007858276,
+            "median_ms": 18.57602596282959,
+            "std_dev_ms": 8.42536442053188,
+            "min_ms": 3.4761428833007812,
+            "max_ms": 29.96230125427246,
+            "p95_ms": 28.402185440063477,
+            "p99_ms": 29.531533718109127
+          },
+          "timestamp": "2025-09-20T00:19:59.569363"
+        },
+        "concurrent_test": {
+          "scenario": "medium_stress",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.2261297702789307,
+          "effective_throughput_req_s": 81.55743578206337,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 13.532898426055908,
+            "std_dev_ms": 10.58721018403386,
+            "p95_ms": 41.71515703201294
+          },
+          "timestamp": "2025-09-20T00:20:00.795492"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 22.48077392578125,
+            "max_duration_ms": 28.80406379699707,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:20:03.412374"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 17.033863067626953,
+            "max_duration_ms": 26.801347732543945,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:20:06.002122"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 8.704376220703125,
+            "max_duration_ms": 20.06363868713379,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:20:08.550982"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 22.072601318359375,
+            "max_duration_ms": 28.65910530090332,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:20:11.166891"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:19:57.483202",
+      "execution_end": "2025-09-20T00:20:11.166891"
+    },
+    "high_stress_run_3": {
+      "scenario_name": "high_stress",
+      "chaos_config": {
+        "scenario_applied": "high_stress",
+        "timestamp": "2025-09-20T00:20:23.170909",
+        "config": {
+          "name": "High Stress",
+          "latency_ms": 300,
+          "packet_loss": 0.1,
+          "description": "Severe network conditions"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "high_stress",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.0724453926086426,
+          "throughput_req_s": 96.50435215967482,
+          "latency_stats": {
+            "mean_ms": 17.600889205932617,
+            "median_ms": 19.158482551574707,
+            "std_dev_ms": 8.204432395581595,
+            "min_ms": 3.615140914916992,
+            "max_ms": 30.88998794555664,
+            "p95_ms": 28.05767059326172,
+            "p99_ms": 28.6544919013977
+          },
+          "timestamp": "2025-09-20T00:20:55.244444"
+        },
+        "concurrent_test": {
+          "scenario": "high_stress",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.2381694316864014,
+          "effective_throughput_req_s": 80.76439091522299,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 13.392760753631592,
+            "std_dev_ms": 8.171948839251533,
+            "p95_ms": 24.60086345672607
+          },
+          "timestamp": "2025-09-20T00:20:56.483136"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 12.1673583984375,
+            "max_duration_ms": 28.229475021362305,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:20:59.051213"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 14.226150512695312,
+            "max_duration_ms": 28.51390838623047,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:21:01.627519"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 13.501453399658203,
+            "max_duration_ms": 28.48505973815918,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:21:04.199651"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 9.930276870727539,
+            "max_duration_ms": 25.65598487854004,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:21:06.754412"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:20:53.171471",
+      "execution_end": "2025-09-20T00:21:06.754412"
+    },
+    "baseline_run_4": {
+      "scenario_name": "baseline",
+      "chaos_config": {
+        "scenario_applied": "baseline",
+        "timestamp": "2025-09-20T00:21:18.758740",
+        "config": {
+          "name": "Baseline",
+          "latency_ms": 0,
+          "packet_loss": 0.0,
+          "description": "Normal network conditions"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "baseline",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.076009511947632,
+          "throughput_req_s": 96.33867226955417,
+          "latency_stats": {
+            "mean_ms": 15.82531213760376,
+            "median_ms": 17.87889003753662,
+            "std_dev_ms": 8.845545412676005,
+            "min_ms": 3.6325454711914062,
+            "max_ms": 31.523704528808594,
+            "p95_ms": 28.69631052017212,
+            "p99_ms": 29.353828430175778
+          },
+          "timestamp": "2025-09-20T00:21:50.835965"
+        },
+        "concurrent_test": {
+          "scenario": "baseline",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.2115399837493896,
+          "effective_throughput_req_s": 82.539578834639,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 12.239160537719727,
+            "std_dev_ms": 7.367209852762546,
+            "p95_ms": 24.82067346572876
+          },
+          "timestamp": "2025-09-20T00:21:52.048505"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 17.94109344482422,
+            "max_duration_ms": 28.23638916015625,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:21:54.643854"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 15.188789367675781,
+            "max_duration_ms": 26.854753494262695,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:21:57.224401"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 18.415403366088867,
+            "max_duration_ms": 28.937339782714844,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:21:59.821952"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 12.783384323120117,
+            "max_duration_ms": 22.17411994934082,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:22:02.391030"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:21:48.758921",
+      "execution_end": "2025-09-20T00:22:02.391030"
+    },
+    "medium_stress_run_4": {
+      "scenario_name": "medium_stress",
+      "chaos_config": {
+        "scenario_applied": "medium_stress",
+        "timestamp": "2025-09-20T00:22:14.395127",
+        "config": {
+          "name": "Medium Stress",
+          "latency_ms": 150,
+          "packet_loss": 0.03,
+          "description": "Moderate network degradation"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "medium_stress",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.084916591644287,
+          "throughput_req_s": 95.92709885927297,
+          "latency_stats": {
+            "mean_ms": 17.976220846176147,
+            "median_ms": 19.42729949951172,
+            "std_dev_ms": 8.359782126843186,
+            "min_ms": 3.6165714263916016,
+            "max_ms": 30.631303787231445,
+            "p95_ms": 28.680217266082764,
+            "p99_ms": 29.51047658920288
+          },
+          "timestamp": "2025-09-20T00:22:46.481161"
+        },
+        "concurrent_test": {
+          "scenario": "medium_stress",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.1512179374694824,
+          "effective_throughput_req_s": 86.86452559956824,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 9.89231824874878,
+            "std_dev_ms": 5.79518966145568,
+            "p95_ms": 23.508191108703613
+          },
+          "timestamp": "2025-09-20T00:22:47.633912"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 11.101531982421875,
+            "max_duration_ms": 22.824764251708984,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:22:50.194334"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 14.48359489440918,
+            "max_duration_ms": 24.628162384033203,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:22:52.772818"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 10.314750671386719,
+            "max_duration_ms": 19.65475082397461,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:22:55.329680"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 12.806177139282227,
+            "max_duration_ms": 23.997068405151367,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:22:57.898608"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:22:44.395711",
+      "execution_end": "2025-09-20T00:22:57.898608"
+    },
+    "high_stress_run_4": {
+      "scenario_name": "high_stress",
+      "chaos_config": {
+        "scenario_applied": "high_stress",
+        "timestamp": "2025-09-20T00:23:09.902824",
+        "config": {
+          "name": "High Stress",
+          "latency_ms": 300,
+          "packet_loss": 0.1,
+          "description": "Severe network conditions"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "high_stress",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.0786685943603516,
+          "throughput_req_s": 96.21543354367368,
+          "latency_stats": {
+            "mean_ms": 16.822656393051147,
+            "median_ms": 18.499016761779785,
+            "std_dev_ms": 8.52909297360449,
+            "min_ms": 3.0655860900878906,
+            "max_ms": 30.673503875732422,
+            "p95_ms": 28.128445148468014,
+            "p99_ms": 29.195680618286122
+          },
+          "timestamp": "2025-09-20T00:23:41.982350"
+        },
+        "concurrent_test": {
+          "scenario": "high_stress",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.1804125308990479,
+          "effective_throughput_req_s": 84.71614573918166,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 11.552724838256836,
+            "std_dev_ms": 8.58292074064468,
+            "p95_ms": 26.467752456665036
+          },
+          "timestamp": "2025-09-20T00:23:43.164286"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 17.476606369018555,
+            "max_duration_ms": 26.33190155029297,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:23:45.757180"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 9.139347076416016,
+            "max_duration_ms": 19.212961196899414,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:23:48.309150"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 24.839305877685547,
+            "max_duration_ms": 29.102802276611328,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:23:50.939220"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 9.672164916992188,
+            "max_duration_ms": 25.658130645751953,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:23:53.491989"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:23:39.903138",
+      "execution_end": "2025-09-20T00:23:53.491989"
+    },
+    "baseline_run_5": {
+      "scenario_name": "baseline",
+      "chaos_config": {
+        "scenario_applied": "baseline",
+        "timestamp": "2025-09-20T00:24:05.497366",
+        "config": {
+          "name": "Baseline",
+          "latency_ms": 0,
+          "packet_loss": 0.0,
+          "description": "Normal network conditions"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "baseline",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.070887565612793,
+          "throughput_req_s": 96.57694764361499,
+          "latency_stats": {
+            "mean_ms": 18.10931921005249,
+            "median_ms": 18.86594295501709,
+            "std_dev_ms": 8.591969979260723,
+            "min_ms": 3.3981800079345703,
+            "max_ms": 32.431602478027344,
+            "p95_ms": 28.986847400665283,
+            "p99_ms": 29.563322067260742
+          },
+          "timestamp": "2025-09-20T00:24:37.569200"
+        },
+        "concurrent_test": {
+          "scenario": "baseline",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.198436975479126,
+          "effective_throughput_req_s": 83.44201826718569,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 11.387925148010254,
+            "std_dev_ms": 5.401511152770868,
+            "p95_ms": 23.93313646316528
+          },
+          "timestamp": "2025-09-20T00:24:38.768161"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 17.80538558959961,
+            "max_duration_ms": 29.329538345336914,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:24:41.362703"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 16.46404266357422,
+            "max_duration_ms": 32.747507095336914,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:24:43.950733"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 13.545417785644531,
+            "max_duration_ms": 22.048473358154297,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:24:46.522311"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 11.655426025390625,
+            "max_duration_ms": 27.482271194458008,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:24:49.085552"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:24:35.497778",
+      "execution_end": "2025-09-20T00:24:49.085552"
+    },
+    "medium_stress_run_5": {
+      "scenario_name": "medium_stress",
+      "chaos_config": {
+        "scenario_applied": "medium_stress",
+        "timestamp": "2025-09-20T00:25:01.090189",
+        "config": {
+          "name": "Medium Stress",
+          "latency_ms": 150,
+          "packet_loss": 0.03,
+          "description": "Moderate network degradation"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "medium_stress",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.0799005031585693,
+          "throughput_req_s": 96.15844589502088,
+          "latency_stats": {
+            "mean_ms": 15.86806058883667,
+            "median_ms": 16.90220832824707,
+            "std_dev_ms": 8.076603179705863,
+            "min_ms": 3.004312515258789,
+            "max_ms": 29.809236526489258,
+            "p95_ms": 27.080464363098145,
+            "p99_ms": 28.278496265411377
+          },
+          "timestamp": "2025-09-20T00:25:33.171973"
+        },
+        "concurrent_test": {
+          "scenario": "medium_stress",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.150827169418335,
+          "effective_throughput_req_s": 86.89402080291796,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 9.471111297607422,
+            "std_dev_ms": 3.7045215341033275,
+            "p95_ms": 16.454827785491936
+          },
+          "timestamp": "2025-09-20T00:25:34.324333"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 13.772249221801758,
+            "max_duration_ms": 25.62880516052246,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:25:36.899932"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 21.195554733276367,
+            "max_duration_ms": 28.272151947021484,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:25:39.511501"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 22.638320922851562,
+            "max_duration_ms": 28.42426300048828,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:25:42.129622"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 8.6029052734375,
+            "max_duration_ms": 19.443035125732422,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:25:44.676957"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:25:31.091004",
+      "execution_end": "2025-09-20T00:25:44.676957"
+    },
+    "high_stress_run_5": {
+      "scenario_name": "high_stress",
+      "chaos_config": {
+        "scenario_applied": "high_stress",
+        "timestamp": "2025-09-20T00:25:56.682323",
+        "config": {
+          "name": "High Stress",
+          "latency_ms": 300,
+          "packet_loss": 0.1,
+          "description": "Severe network conditions"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "high_stress",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.0788567066192627,
+          "throughput_req_s": 96.20672717036359,
+          "latency_stats": {
+            "mean_ms": 16.77826166152954,
+            "median_ms": 18.076777458190918,
+            "std_dev_ms": 8.652245311875099,
+            "min_ms": 2.5725364685058594,
+            "max_ms": 29.499292373657227,
+            "p95_ms": 28.23939323425293,
+            "p99_ms": 29.07151937484741
+          },
+          "timestamp": "2025-09-20T00:26:28.762078"
+        },
+        "concurrent_test": {
+          "scenario": "high_stress",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.1518478393554688,
+          "effective_throughput_req_s": 86.81702268587514,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 9.597585201263428,
+            "std_dev_ms": 5.132186017578567,
+            "p95_ms": 20.80940008163452
+          },
+          "timestamp": "2025-09-20T00:26:29.914455"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 22.454357147216797,
+            "max_duration_ms": 28.4426212310791,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:26:32.531184"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 11.838436126708984,
+            "max_duration_ms": 23.173093795776367,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:26:35.095419"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 20.30649185180664,
+            "max_duration_ms": 29.339075088500977,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:26:37.703221"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 9.77315902709961,
+            "max_duration_ms": 26.75604820251465,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:26:40.256874"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:26:26.682689",
+      "execution_end": "2025-09-20T00:26:40.256874"
+    },
+    "baseline_run_6": {
+      "scenario_name": "baseline",
+      "chaos_config": {
+        "scenario_applied": "baseline",
+        "timestamp": "2025-09-20T00:26:52.262096",
+        "config": {
+          "name": "Baseline",
+          "latency_ms": 0,
+          "packet_loss": 0.0,
+          "description": "Normal network conditions"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "baseline",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.0786445140838623,
+          "throughput_req_s": 96.21654816150591,
+          "latency_stats": {
+            "mean_ms": 15.903900861740112,
+            "median_ms": 17.804265022277832,
+            "std_dev_ms": 8.566594586212952,
+            "min_ms": 3.124713897705078,
+            "max_ms": 28.89084815979004,
+            "p95_ms": 27.961230278015133,
+            "p99_ms": 28.79854917526245
+          },
+          "timestamp": "2025-09-20T00:27:24.342018"
+        },
+        "concurrent_test": {
+          "scenario": "baseline",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.1770000457763672,
+          "effective_throughput_req_s": 84.96176390039005,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 11.13759994506836,
+            "std_dev_ms": 7.273308767991197,
+            "p95_ms": 24.78898763656616
+          },
+          "timestamp": "2025-09-20T00:27:25.520558"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 8.451318740844727,
+            "max_duration_ms": 18.19610595703125,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:27:28.067371"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 17.975807189941406,
+            "max_duration_ms": 28.995513916015625,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:27:30.662963"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 19.719266891479492,
+            "max_duration_ms": 28.273820877075195,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:27:33.266940"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 18.278217315673828,
+            "max_duration_ms": 26.9014835357666,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:27:35.862698"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:27:22.262346",
+      "execution_end": "2025-09-20T00:27:35.862698"
+    },
+    "medium_stress_run_6": {
+      "scenario_name": "medium_stress",
+      "chaos_config": {
+        "scenario_applied": "medium_stress",
+        "timestamp": "2025-09-20T00:27:47.868147",
+        "config": {
+          "name": "Medium Stress",
+          "latency_ms": 150,
+          "packet_loss": 0.03,
+          "description": "Moderate network degradation"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "medium_stress",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.088998556137085,
+          "throughput_req_s": 95.73965449254985,
+          "latency_stats": {
+            "mean_ms": 17.066974639892578,
+            "median_ms": 18.777012825012207,
+            "std_dev_ms": 8.365435822444093,
+            "min_ms": 3.5943984985351562,
+            "max_ms": 31.507253646850586,
+            "p95_ms": 28.148365020751953,
+            "p99_ms": 29.626634120941162
+          },
+          "timestamp": "2025-09-20T00:28:19.958557"
+        },
+        "concurrent_test": {
+          "scenario": "medium_stress",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.173356294631958,
+          "effective_throughput_req_s": 85.22560492281383,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 13.661980628967285,
+            "std_dev_ms": 4.484162378624175,
+            "p95_ms": 19.917809963226315
+          },
+          "timestamp": "2025-09-20T00:28:21.133438"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 16.29490852355957,
+            "max_duration_ms": 27.480363845825195,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:28:23.720500"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 23.251819610595703,
+            "max_duration_ms": 28.08070182800293,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:28:26.341918"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 15.861320495605469,
+            "max_duration_ms": 25.855302810668945,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:28:28.925983"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 12.97597885131836,
+            "max_duration_ms": 19.826889038085938,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:28:31.496628"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:28:17.868507",
+      "execution_end": "2025-09-20T00:28:31.496628"
+    },
+    "high_stress_run_6": {
+      "scenario_name": "high_stress",
+      "chaos_config": {
+        "scenario_applied": "high_stress",
+        "timestamp": "2025-09-20T00:28:43.502246",
+        "config": {
+          "name": "High Stress",
+          "latency_ms": 300,
+          "packet_loss": 0.1,
+          "description": "Severe network conditions"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "high_stress",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.0960443019866943,
+          "throughput_req_s": 95.41783053460938,
+          "latency_stats": {
+            "mean_ms": 18.17773461341858,
+            "median_ms": 19.53589916229248,
+            "std_dev_ms": 8.63178636508993,
+            "min_ms": 3.668069839477539,
+            "max_ms": 34.07478332519531,
+            "p95_ms": 29.08140420913696,
+            "p99_ms": 30.406484603881818
+          },
+          "timestamp": "2025-09-20T00:29:15.600786"
+        },
+        "concurrent_test": {
+          "scenario": "high_stress",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.2196764945983887,
+          "effective_throughput_req_s": 81.98895399138416,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 11.956110000610352,
+            "std_dev_ms": 6.5189067608253985,
+            "p95_ms": 24.256503582000732
+          },
+          "timestamp": "2025-09-20T00:29:16.821993"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 11.389636993408203,
+            "max_duration_ms": 24.465322494506836,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:29:19.383887"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 16.65658950805664,
+            "max_duration_ms": 27.074575424194336,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:29:21.971534"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 22.360515594482422,
+            "max_duration_ms": 29.58822250366211,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:29:24.589010"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 5.265283584594727,
+            "max_duration_ms": 5.870580673217773,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:29:27.119910"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:29:13.502635",
+      "execution_end": "2025-09-20T00:29:27.119910"
+    },
+    "baseline_run_7": {
+      "scenario_name": "baseline",
+      "chaos_config": {
+        "scenario_applied": "baseline",
+        "timestamp": "2025-09-20T00:29:39.125565",
+        "config": {
+          "name": "Baseline",
+          "latency_ms": 0,
+          "packet_loss": 0.0,
+          "description": "Normal network conditions"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "baseline",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.0708131790161133,
+          "throughput_req_s": 96.58041682689318,
+          "latency_stats": {
+            "mean_ms": 15.694587230682373,
+            "median_ms": 17.4788236618042,
+            "std_dev_ms": 8.353184617005752,
+            "min_ms": 3.0074119567871094,
+            "max_ms": 30.506372451782227,
+            "p95_ms": 27.63854265213012,
+            "p99_ms": 29.280538558959957
+          },
+          "timestamp": "2025-09-20T00:30:11.197684"
+        },
+        "concurrent_test": {
+          "scenario": "baseline",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.2336595058441162,
+          "effective_throughput_req_s": 81.05964370742333,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 12.215883731842041,
+            "std_dev_ms": 7.599836697872314,
+            "p95_ms": 24.305105209350586
+          },
+          "timestamp": "2025-09-20T00:30:12.431879"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 16.64142608642578,
+            "max_duration_ms": 28.524398803710938,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:30:15.020747"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 9.155607223510742,
+            "max_duration_ms": 24.309158325195312,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:30:17.570196"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 13.74969482421875,
+            "max_duration_ms": 25.3446102142334,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:30:20.145481"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 23.492145538330078,
+            "max_duration_ms": 28.779983520507812,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:30:22.767511"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:30:09.125816",
+      "execution_end": "2025-09-20T00:30:22.767511"
+    },
+    "medium_stress_run_7": {
+      "scenario_name": "medium_stress",
+      "chaos_config": {
+        "scenario_applied": "medium_stress",
+        "timestamp": "2025-09-20T00:30:34.774998",
+        "config": {
+          "name": "Medium Stress",
+          "latency_ms": 150,
+          "packet_loss": 0.03,
+          "description": "Moderate network degradation"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "medium_stress",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.079613447189331,
+          "throughput_req_s": 96.17171896551585,
+          "latency_stats": {
+            "mean_ms": 15.288368463516235,
+            "median_ms": 16.423821449279785,
+            "std_dev_ms": 8.80602455830579,
+            "min_ms": 3.0074119567871094,
+            "max_ms": 28.79810333251953,
+            "p95_ms": 26.725339889526364,
+            "p99_ms": 27.980551719665524
+          },
+          "timestamp": "2025-09-20T00:31:06.855884"
+        },
+        "concurrent_test": {
+          "scenario": "medium_stress",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.176882028579712,
+          "effective_throughput_req_s": 84.9702838275832,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 10.510129928588867,
+            "std_dev_ms": 7.85908804880832,
+            "p95_ms": 25.718986988067627
+          },
+          "timestamp": "2025-09-20T00:31:08.034404"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 10.545635223388672,
+            "max_duration_ms": 21.798372268676758,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:31:10.593063"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 15.07411003112793,
+            "max_duration_ms": 26.845455169677734,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:31:13.173953"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 10.871410369873047,
+            "max_duration_ms": 27.97102928161621,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:31:15.734122"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 15.638875961303711,
+            "max_duration_ms": 26.036977767944336,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:31:18.317774"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:31:04.775244",
+      "execution_end": "2025-09-20T00:31:18.317774"
+    },
+    "high_stress_run_7": {
+      "scenario_name": "high_stress",
+      "chaos_config": {
+        "scenario_applied": "high_stress",
+        "timestamp": "2025-09-20T00:31:30.323676",
+        "config": {
+          "name": "High Stress",
+          "latency_ms": 300,
+          "packet_loss": 0.1,
+          "description": "Severe network conditions"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "high_stress",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.09078049659729,
+          "throughput_req_s": 95.65805703922369,
+          "latency_stats": {
+            "mean_ms": 15.671346187591553,
+            "median_ms": 16.96610450744629,
+            "std_dev_ms": 8.60265252475141,
+            "min_ms": 3.0059814453125,
+            "max_ms": 29.297590255737305,
+            "p95_ms": 27.080583572387695,
+            "p99_ms": 28.782658576965332
+          },
+          "timestamp": "2025-09-20T00:32:02.416046"
+        },
+        "concurrent_test": {
+          "scenario": "high_stress",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.1503784656524658,
+          "effective_throughput_req_s": 86.92791371340779,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 10.386381149291992,
+            "std_dev_ms": 6.958246400818911,
+            "p95_ms": 29.33201789855957
+          },
+          "timestamp": "2025-09-20T00:32:03.566947"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 17.645740509033203,
+            "max_duration_ms": 27.295827865600586,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:32:06.160776"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 17.488670349121094,
+            "max_duration_ms": 29.013633728027344,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:32:08.753135"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 12.155437469482422,
+            "max_duration_ms": 23.49376678466797,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:32:11.319026"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 15.62047004699707,
+            "max_duration_ms": 26.11708641052246,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:32:13.902726"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:32:00.324207",
+      "execution_end": "2025-09-20T00:32:13.902726"
+    },
+    "baseline_run_8": {
+      "scenario_name": "baseline",
+      "chaos_config": {
+        "scenario_applied": "baseline",
+        "timestamp": "2025-09-20T00:32:25.908735",
+        "config": {
+          "name": "Baseline",
+          "latency_ms": 0,
+          "packet_loss": 0.0,
+          "description": "Normal network conditions"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "baseline",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.0835916996002197,
+          "throughput_req_s": 95.98809595871117,
+          "latency_stats": {
+            "mean_ms": 16.12033724784851,
+            "median_ms": 18.154025077819824,
+            "std_dev_ms": 8.178138536488754,
+            "min_ms": 3.1061172485351562,
+            "max_ms": 28.897762298583984,
+            "p95_ms": 27.39511728286743,
+            "p99_ms": 28.57008457183838
+          },
+          "timestamp": "2025-09-20T00:32:57.993793"
+        },
+        "concurrent_test": {
+          "scenario": "baseline",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.1961379051208496,
+          "effective_throughput_req_s": 83.60240033518267,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 11.30056381225586,
+            "std_dev_ms": 6.1719614442329425,
+            "p95_ms": 24.73318576812744
+          },
+          "timestamp": "2025-09-20T00:32:59.190454"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 23.94871711730957,
+            "max_duration_ms": 28.43642234802246,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:33:01.814943"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 11.135005950927734,
+            "max_duration_ms": 21.74067497253418,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:33:04.376745"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 11.94920539855957,
+            "max_duration_ms": 24.081945419311523,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:33:06.940478"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 15.073156356811523,
+            "max_duration_ms": 26.61752700805664,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:33:09.522825"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:32:55.909084",
+      "execution_end": "2025-09-20T00:33:09.522825"
+    },
+    "medium_stress_run_8": {
+      "scenario_name": "medium_stress",
+      "chaos_config": {
+        "scenario_applied": "medium_stress",
+        "timestamp": "2025-09-20T00:33:21.529598",
+        "config": {
+          "name": "Medium Stress",
+          "latency_ms": 150,
+          "packet_loss": 0.03,
+          "description": "Moderate network degradation"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "medium_stress",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.0840630531311035,
+          "throughput_req_s": 95.96638628544339,
+          "latency_stats": {
+            "mean_ms": 15.821843147277832,
+            "median_ms": 17.847061157226562,
+            "std_dev_ms": 8.642050602354182,
+            "min_ms": 3.0035972595214844,
+            "max_ms": 29.747962951660156,
+            "p95_ms": 27.913963794708252,
+            "p99_ms": 28.943204879760735
+          },
+          "timestamp": "2025-09-20T00:33:53.615016"
+        },
+        "concurrent_test": {
+          "scenario": "medium_stress",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.1804304122924805,
+          "effective_throughput_req_s": 84.71486244224496,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 9.57249641418457,
+            "std_dev_ms": 6.318061044705243,
+            "p95_ms": 25.028824806213375
+          },
+          "timestamp": "2025-09-20T00:33:54.795978"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 9.635639190673828,
+            "max_duration_ms": 26.3211727142334,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:33:57.349441"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 11.394309997558594,
+            "max_duration_ms": 23.741960525512695,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:33:59.910461"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 22.000455856323242,
+            "max_duration_ms": 26.623964309692383,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:34:02.524892"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 13.51776123046875,
+            "max_duration_ms": 26.747941970825195,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:34:05.096215"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:33:51.529881",
+      "execution_end": "2025-09-20T00:34:05.096215"
+    },
+    "high_stress_run_8": {
+      "scenario_name": "high_stress",
+      "chaos_config": {
+        "scenario_applied": "high_stress",
+        "timestamp": "2025-09-20T00:34:17.103374",
+        "config": {
+          "name": "High Stress",
+          "latency_ms": 300,
+          "packet_loss": 0.1,
+          "description": "Severe network conditions"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "high_stress",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.08476185798645,
+          "throughput_req_s": 95.93421868969165,
+          "latency_stats": {
+            "mean_ms": 15.753365755081177,
+            "median_ms": 17.63761043548584,
+            "std_dev_ms": 9.262452515973148,
+            "min_ms": 3.1137466430664062,
+            "max_ms": 29.372453689575195,
+            "p95_ms": 28.304195404052734,
+            "p99_ms": 28.83881330490112
+          },
+          "timestamp": "2025-09-20T00:34:49.189772"
+        },
+        "concurrent_test": {
+          "scenario": "high_stress",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.1844446659088135,
+          "effective_throughput_req_s": 84.42775156851327,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 10.272316932678223,
+            "std_dev_ms": 7.141060267031679,
+            "p95_ms": 24.21082258224487
+          },
+          "timestamp": "2025-09-20T00:34:50.374732"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 14.168024063110352,
+            "max_duration_ms": 28.996706008911133,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:34:52.950364"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 11.910390853881836,
+            "max_duration_ms": 23.675918579101562,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:34:55.514862"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 13.460588455200195,
+            "max_duration_ms": 27.71615982055664,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:34:58.086340"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 11.658287048339844,
+            "max_duration_ms": 27.605056762695312,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:35:00.649568"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:34:47.103879",
+      "execution_end": "2025-09-20T00:35:00.649568"
+    },
+    "baseline_run_9": {
+      "scenario_name": "baseline",
+      "chaos_config": {
+        "scenario_applied": "baseline",
+        "timestamp": "2025-09-20T00:35:12.657401",
+        "config": {
+          "name": "Baseline",
+          "latency_ms": 0,
+          "packet_loss": 0.0,
+          "description": "Normal network conditions"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "baseline",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.069563388824463,
+          "throughput_req_s": 96.6387408474608,
+          "latency_stats": {
+            "mean_ms": 15.904204845428467,
+            "median_ms": 17.981886863708496,
+            "std_dev_ms": 8.882603886091967,
+            "min_ms": 2.5348663330078125,
+            "max_ms": 29.199600219726562,
+            "p95_ms": 27.89943218231201,
+            "p99_ms": 28.532776832580563
+          },
+          "timestamp": "2025-09-20T00:35:44.727961"
+        },
+        "concurrent_test": {
+          "scenario": "baseline",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.1332316398620605,
+          "effective_throughput_req_s": 88.2432121399048,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 10.19874095916748,
+            "std_dev_ms": 6.006740158802945,
+            "p95_ms": 24.813854694366455
+          },
+          "timestamp": "2025-09-20T00:35:45.861719"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 14.586019515991211,
+            "max_duration_ms": 23.78702163696289,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:35:48.439443"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 5.242633819580078,
+            "max_duration_ms": 5.850315093994141,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:35:50.970811"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 16.021394729614258,
+            "max_duration_ms": 27.76956558227539,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:35:53.557415"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 13.85345458984375,
+            "max_duration_ms": 25.430917739868164,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:35:56.130340"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:35:42.657881",
+      "execution_end": "2025-09-20T00:35:56.130340"
+    },
+    "medium_stress_run_9": {
+      "scenario_name": "medium_stress",
+      "chaos_config": {
+        "scenario_applied": "medium_stress",
+        "timestamp": "2025-09-20T00:36:08.137343",
+        "config": {
+          "name": "Medium Stress",
+          "latency_ms": 150,
+          "packet_loss": 0.03,
+          "description": "Moderate network degradation"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "medium_stress",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.0939691066741943,
+          "throughput_req_s": 95.51239288226924,
+          "latency_stats": {
+            "mean_ms": 15.516210794448853,
+            "median_ms": 16.650915145874023,
+            "std_dev_ms": 8.52483275281709,
+            "min_ms": 3.0057430267333984,
+            "max_ms": 29.62636947631836,
+            "p95_ms": 27.0097017288208,
+            "p99_ms": 28.32847833633423
+          },
+          "timestamp": "2025-09-20T00:36:40.232472"
+        },
+        "concurrent_test": {
+          "scenario": "medium_stress",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.1641089916229248,
+          "effective_throughput_req_s": 85.90260939449195,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 9.824507236480713,
+            "std_dev_ms": 7.113106211255772,
+            "p95_ms": 24.013662338256836
+          },
+          "timestamp": "2025-09-20T00:36:41.398112"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 12.33510971069336,
+            "max_duration_ms": 22.19367027282715,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:36:43.964562"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 12.869930267333984,
+            "max_duration_ms": 25.259971618652344,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:36:46.533189"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 11.433744430541992,
+            "max_duration_ms": 26.67522430419922,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:36:49.095178"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 13.44614028930664,
+            "max_duration_ms": 22.539138793945312,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:36:51.667447"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:36:38.137984",
+      "execution_end": "2025-09-20T00:36:51.667447"
+    },
+    "high_stress_run_9": {
+      "scenario_name": "high_stress",
+      "chaos_config": {
+        "scenario_applied": "high_stress",
+        "timestamp": "2025-09-20T00:37:03.675106",
+        "config": {
+          "name": "High Stress",
+          "latency_ms": 300,
+          "packet_loss": 0.1,
+          "description": "Severe network conditions"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "high_stress",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.071049451828003,
+          "throughput_req_s": 96.56939858363636,
+          "latency_stats": {
+            "mean_ms": 16.47011637687683,
+            "median_ms": 17.966747283935547,
+            "std_dev_ms": 9.248728329695437,
+            "min_ms": 3.0069351196289062,
+            "max_ms": 29.187917709350586,
+            "p95_ms": 28.00295352935791,
+            "p99_ms": 28.535804748535156
+          },
+          "timestamp": "2025-09-20T00:37:35.747652"
+        },
+        "concurrent_test": {
+          "scenario": "high_stress",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.178816795349121,
+          "effective_throughput_req_s": 84.83082391983037,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 11.733286380767822,
+            "std_dev_ms": 8.585759295696382,
+            "p95_ms": 27.220797538757324
+          },
+          "timestamp": "2025-09-20T00:37:36.927996"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 8.420228958129883,
+            "max_duration_ms": 15.565872192382812,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:37:39.474628"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 10.550546646118164,
+            "max_duration_ms": 23.20575714111328,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:37:42.031817"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 13.50698471069336,
+            "max_duration_ms": 20.65443992614746,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:37:44.605070"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 18.91627311706543,
+            "max_duration_ms": 27.726411819458008,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:37:47.203974"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:37:33.675559",
+      "execution_end": "2025-09-20T00:37:47.203974"
+    },
+    "baseline_run_10": {
+      "scenario_name": "baseline",
+      "chaos_config": {
+        "scenario_applied": "baseline",
+        "timestamp": "2025-09-20T00:37:59.211971",
+        "config": {
+          "name": "Baseline",
+          "latency_ms": 0,
+          "packet_loss": 0.0,
+          "description": "Normal network conditions"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "baseline",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.0759449005126953,
+          "throughput_req_s": 96.34167070166751,
+          "latency_stats": {
+            "mean_ms": 16.00274920463562,
+            "median_ms": 17.848730087280273,
+            "std_dev_ms": 8.696953932577719,
+            "min_ms": 2.4461746215820312,
+            "max_ms": 29.124975204467773,
+            "p95_ms": 27.96542644500732,
+            "p99_ms": 28.66144895553589
+          },
+          "timestamp": "2025-09-20T00:38:31.289008"
+        },
+        "concurrent_test": {
+          "scenario": "baseline",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.1950979232788086,
+          "effective_throughput_req_s": 83.67515167765097,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 9.593281745910645,
+            "std_dev_ms": 6.112473307713525,
+            "p95_ms": 21.99409008026123
+          },
+          "timestamp": "2025-09-20T00:38:32.485642"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 13.797378540039062,
+            "max_duration_ms": 28.238773345947266,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:38:35.060560"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 13.447856903076172,
+            "max_duration_ms": 25.67315101623535,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:38:37.632920"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 15.916013717651367,
+            "max_duration_ms": 27.27055549621582,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:38:40.217075"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 20.325946807861328,
+            "max_duration_ms": 27.0540714263916,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:38:42.824016"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:38:29.212536",
+      "execution_end": "2025-09-20T00:38:42.824016"
+    },
+    "medium_stress_run_10": {
+      "scenario_name": "medium_stress",
+      "chaos_config": {
+        "scenario_applied": "medium_stress",
+        "timestamp": "2025-09-20T00:38:54.831911",
+        "config": {
+          "name": "Medium Stress",
+          "latency_ms": 150,
+          "packet_loss": 0.03,
+          "description": "Moderate network degradation"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "medium_stress",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.086188793182373,
+          "throughput_req_s": 95.86860050902217,
+          "latency_stats": {
+            "mean_ms": 14.935423135757446,
+            "median_ms": 15.87212085723877,
+            "std_dev_ms": 8.421933107831656,
+            "min_ms": 3.008604049682617,
+            "max_ms": 28.854846954345703,
+            "p95_ms": 26.66684389114379,
+            "p99_ms": 28.689980506896973
+          },
+          "timestamp": "2025-09-20T00:39:26.919776"
+        },
+        "concurrent_test": {
+          "scenario": "medium_stress",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.1607413291931152,
+          "effective_throughput_req_s": 86.15183890239749,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 11.665787696838379,
+            "std_dev_ms": 8.807761833041283,
+            "p95_ms": 27.66684293746948
+          },
+          "timestamp": "2025-09-20T00:39:28.081042"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 16.16206169128418,
+            "max_duration_ms": 28.58757972717285,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:39:30.668112"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 7.627058029174805,
+            "max_duration_ms": 18.412351608276367,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:39:33.210945"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 13.95573616027832,
+            "max_duration_ms": 23.941993713378906,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:39:35.785743"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 13.460302352905273,
+            "max_duration_ms": 27.28557586669922,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:39:38.357376"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:39:24.832515",
+      "execution_end": "2025-09-20T00:39:38.357376"
+    },
+    "high_stress_run_10": {
+      "scenario_name": "high_stress",
+      "chaos_config": {
+        "scenario_applied": "high_stress",
+        "timestamp": "2025-09-20T00:39:50.365226",
+        "config": {
+          "name": "High Stress",
+          "latency_ms": 300,
+          "packet_loss": 0.1,
+          "description": "Severe network conditions"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "high_stress",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.0875344276428223,
+          "throughput_req_s": 95.80680316052735,
+          "latency_stats": {
+            "mean_ms": 16.19538187980652,
+            "median_ms": 17.996549606323242,
+            "std_dev_ms": 8.572091366780182,
+            "min_ms": 3.0074119567871094,
+            "max_ms": 28.990507125854492,
+            "p95_ms": 28.020370006561276,
+            "p99_ms": 28.771224021911618
+          },
+          "timestamp": "2025-09-20T00:40:22.453934"
+        },
+        "concurrent_test": {
+          "scenario": "high_stress",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.1992597579956055,
+          "effective_throughput_req_s": 83.3847707582017,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 10.788826942443848,
+            "std_dev_ms": 6.9854146868244715,
+            "p95_ms": 25.57618618011474
+          },
+          "timestamp": "2025-09-20T00:40:23.654737"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 11.833429336547852,
+            "max_duration_ms": 23.058414459228516,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:40:26.218767"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 22.22142219543457,
+            "max_duration_ms": 29.0377140045166,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:40:28.833837"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 21.190595626831055,
+            "max_duration_ms": 27.512550354003906,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:40:31.444854"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 18.73912811279297,
+            "max_duration_ms": 28.302431106567383,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:40:34.042975"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:40:20.365870",
+      "execution_end": "2025-09-20T00:40:34.042975"
+    },
+    "baseline_run_11": {
+      "scenario_name": "baseline",
+      "chaos_config": {
+        "scenario_applied": "baseline",
+        "timestamp": "2025-09-20T00:40:46.053058",
+        "config": {
+          "name": "Baseline",
+          "latency_ms": 0,
+          "packet_loss": 0.0,
+          "description": "Normal network conditions"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "baseline",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.081667423248291,
+          "throughput_req_s": 96.07682657007453,
+          "latency_stats": {
+            "mean_ms": 15.73804259300232,
+            "median_ms": 17.224669456481934,
+            "std_dev_ms": 8.420445245371972,
+            "min_ms": 3.0059814453125,
+            "max_ms": 29.892921447753906,
+            "p95_ms": 27.703022956848145,
+            "p99_ms": 28.87284755706787
+          },
+          "timestamp": "2025-09-20T00:41:18.135713"
+        },
+        "concurrent_test": {
+          "scenario": "baseline",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.1992976665496826,
+          "effective_throughput_req_s": 83.38213505217169,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 10.51297903060913,
+            "std_dev_ms": 6.183309487906086,
+            "p95_ms": 24.39770698547363
+          },
+          "timestamp": "2025-09-20T00:41:19.336554"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 10.581254959106445,
+            "max_duration_ms": 22.05514907836914,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:41:21.894950"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 13.316535949707031,
+            "max_duration_ms": 21.398544311523438,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:41:24.466745"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 17.776823043823242,
+            "max_duration_ms": 26.27420425415039,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:41:27.060656"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 10.471868515014648,
+            "max_duration_ms": 25.856733322143555,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:41:29.617977"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:41:16.053520",
+      "execution_end": "2025-09-20T00:41:29.617977"
+    },
+    "medium_stress_run_11": {
+      "scenario_name": "medium_stress",
+      "chaos_config": {
+        "scenario_applied": "medium_stress",
+        "timestamp": "2025-09-20T00:41:41.626094",
+        "config": {
+          "name": "Medium Stress",
+          "latency_ms": 150,
+          "packet_loss": 0.03,
+          "description": "Moderate network degradation"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "medium_stress",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.079092264175415,
+          "throughput_req_s": 96.19582711463823,
+          "latency_stats": {
+            "mean_ms": 15.781828165054321,
+            "median_ms": 17.66657829284668,
+            "std_dev_ms": 8.10306902060456,
+            "min_ms": 3.1266212463378906,
+            "max_ms": 29.483318328857422,
+            "p95_ms": 26.609373092651357,
+            "p99_ms": 28.481767177581784
+          },
+          "timestamp": "2025-09-20T00:42:13.706388"
+        },
+        "concurrent_test": {
+          "scenario": "medium_stress",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.2055778503417969,
+          "effective_throughput_req_s": 82.94777477178161,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 11.622724533081055,
+            "std_dev_ms": 7.913277503696353,
+            "p95_ms": 25.058817863464352
+          },
+          "timestamp": "2025-09-20T00:42:14.913017"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 15.163612365722656,
+            "max_duration_ms": 29.79445457458496,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:42:17.494107"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 19.7021484375,
+            "max_duration_ms": 28.46240997314453,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:42:20.098122"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 6.928348541259766,
+            "max_duration_ms": 12.08186149597168,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:42:22.639813"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 10.176277160644531,
+            "max_duration_ms": 20.324230194091797,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:42:25.194533"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:42:11.626775",
+      "execution_end": "2025-09-20T00:42:25.194533"
+    },
+    "high_stress_run_11": {
+      "scenario_name": "high_stress",
+      "chaos_config": {
+        "scenario_applied": "high_stress",
+        "timestamp": "2025-09-20T00:42:37.202820",
+        "config": {
+          "name": "High Stress",
+          "latency_ms": 300,
+          "packet_loss": 0.1,
+          "description": "Severe network conditions"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "high_stress",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.0787353515625,
+          "throughput_req_s": 96.21234364906924,
+          "latency_stats": {
+            "mean_ms": 15.572012662887573,
+            "median_ms": 17.516136169433594,
+            "std_dev_ms": 8.927599651684744,
+            "min_ms": 2.635478973388672,
+            "max_ms": 29.72579002380371,
+            "p95_ms": 28.01718711853027,
+            "p99_ms": 28.88581275939941
+          },
+          "timestamp": "2025-09-20T00:43:09.283106"
+        },
+        "concurrent_test": {
+          "scenario": "high_stress",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.1771039962768555,
+          "effective_throughput_req_s": 84.95426089478669,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 9.380764961242676,
+            "std_dev_ms": 5.221886370970056,
+            "p95_ms": 22.247588634490963
+          },
+          "timestamp": "2025-09-20T00:43:10.461250"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 12.66031265258789,
+            "max_duration_ms": 20.716428756713867,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:43:13.029280"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 17.085552215576172,
+            "max_duration_ms": 27.85634994506836,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:43:15.618714"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 14.275026321411133,
+            "max_duration_ms": 27.868270874023438,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:43:18.193803"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 15.334081649780273,
+            "max_duration_ms": 22.628068923950195,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:43:20.776948"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:43:07.203342",
+      "execution_end": "2025-09-20T00:43:20.776948"
+    },
+    "baseline_run_12": {
+      "scenario_name": "baseline",
+      "chaos_config": {
+        "scenario_applied": "baseline",
+        "timestamp": "2025-09-20T00:43:32.785882",
+        "config": {
+          "name": "Baseline",
+          "latency_ms": 0,
+          "packet_loss": 0.0,
+          "description": "Normal network conditions"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "baseline",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.0817084312438965,
+          "throughput_req_s": 96.0749339332275,
+          "latency_stats": {
+            "mean_ms": 15.632797479629517,
+            "median_ms": 17.389297485351562,
+            "std_dev_ms": 8.448182423831177,
+            "min_ms": 3.113985061645508,
+            "max_ms": 29.793262481689453,
+            "p95_ms": 26.678836345672607,
+            "p99_ms": 28.244743347167965
+          },
+          "timestamp": "2025-09-20T00:44:04.868835"
+        },
+        "concurrent_test": {
+          "scenario": "baseline",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.1723098754882812,
+          "effective_throughput_req_s": 85.30167841360954,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 10.724081993103027,
+            "std_dev_ms": 7.142685852770158,
+            "p95_ms": 25.98675489425659
+          },
+          "timestamp": "2025-09-20T00:44:06.042680"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 17.588090896606445,
+            "max_duration_ms": 27.566909790039062,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:44:08.635684"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 10.381126403808594,
+            "max_duration_ms": 18.419981002807617,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:44:11.191925"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 20.083236694335938,
+            "max_duration_ms": 28.733491897583008,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:44:13.796022"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 19.22154426574707,
+            "max_duration_ms": 26.55196189880371,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:44:16.398472"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:44:02.786083",
+      "execution_end": "2025-09-20T00:44:16.398472"
+    },
+    "medium_stress_run_12": {
+      "scenario_name": "medium_stress",
+      "chaos_config": {
+        "scenario_applied": "medium_stress",
+        "timestamp": "2025-09-20T00:44:28.407195",
+        "config": {
+          "name": "Medium Stress",
+          "latency_ms": 150,
+          "packet_loss": 0.03,
+          "description": "Moderate network degradation"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "medium_stress",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.0797572135925293,
+          "throughput_req_s": 96.16507094812484,
+          "latency_stats": {
+            "mean_ms": 15.809543132781982,
+            "median_ms": 17.896175384521484,
+            "std_dev_ms": 9.28528676790303,
+            "min_ms": 3.1175613403320312,
+            "max_ms": 30.409812927246094,
+            "p95_ms": 28.255629539489746,
+            "p99_ms": 28.942077159881592
+          },
+          "timestamp": "2025-09-20T00:45:00.487980"
+        },
+        "concurrent_test": {
+          "scenario": "medium_stress",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.2056665420532227,
+          "effective_throughput_req_s": 82.94167293528962,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 9.213323593139648,
+            "std_dev_ms": 4.094247339149732,
+            "p95_ms": 21.30388021469116
+          },
+          "timestamp": "2025-09-20T00:45:01.694175"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 24.01599884033203,
+            "max_duration_ms": 27.99367904663086,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:45:04.319586"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 9.40256118774414,
+            "max_duration_ms": 24.608135223388672,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:45:06.872140"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 15.194416046142578,
+            "max_duration_ms": 27.04477310180664,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:45:09.451519"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 15.746450424194336,
+            "max_duration_ms": 26.818275451660156,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:45:12.035777"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:44:58.407693",
+      "execution_end": "2025-09-20T00:45:12.035777"
+    },
+    "high_stress_run_12": {
+      "scenario_name": "high_stress",
+      "chaos_config": {
+        "scenario_applied": "high_stress",
+        "timestamp": "2025-09-20T00:45:24.045284",
+        "config": {
+          "name": "High Stress",
+          "latency_ms": 300,
+          "packet_loss": 0.1,
+          "description": "Severe network conditions"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "high_stress",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.0732789039611816,
+          "throughput_req_s": 96.46555493227777,
+          "latency_stats": {
+            "mean_ms": 15.3718101978302,
+            "median_ms": 16.71469211578369,
+            "std_dev_ms": 8.860236301514757,
+            "min_ms": 3.075122833251953,
+            "max_ms": 29.085636138916016,
+            "p95_ms": 27.500772476196286,
+            "p99_ms": 28.786540031433105
+          },
+          "timestamp": "2025-09-20T00:45:56.119988"
+        },
+        "concurrent_test": {
+          "scenario": "high_stress",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.1477572917938232,
+          "effective_throughput_req_s": 87.12643405968745,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 9.767661094665527,
+            "std_dev_ms": 6.20834943490801,
+            "p95_ms": 23.54614734649658
+          },
+          "timestamp": "2025-09-20T00:45:57.268273"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 26.6019344329834,
+            "max_duration_ms": 28.305530548095703,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:45:59.906866"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 13.509321212768555,
+            "max_duration_ms": 23.18429946899414,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:46:02.479989"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 9.845638275146484,
+            "max_duration_ms": 19.916057586669922,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:46:05.033454"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 16.86234474182129,
+            "max_duration_ms": 26.374340057373047,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:46:07.622519"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:45:54.045662",
+      "execution_end": "2025-09-20T00:46:07.622519"
+    },
+    "baseline_run_13": {
+      "scenario_name": "baseline",
+      "chaos_config": {
+        "scenario_applied": "baseline",
+        "timestamp": "2025-09-20T00:46:19.632737",
+        "config": {
+          "name": "Baseline",
+          "latency_ms": 0,
+          "packet_loss": 0.0,
+          "description": "Normal network conditions"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "baseline",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.0817832946777344,
+          "throughput_req_s": 96.07147896292469,
+          "latency_stats": {
+            "mean_ms": 15.834949016571045,
+            "median_ms": 17.27902889251709,
+            "std_dev_ms": 8.280095224988031,
+            "min_ms": 3.152132034301758,
+            "max_ms": 29.406070709228516,
+            "p95_ms": 27.47105360031128,
+            "p99_ms": 29.072308540344235
+          },
+          "timestamp": "2025-09-20T00:46:51.715387"
+        },
+        "concurrent_test": {
+          "scenario": "baseline",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.149280071258545,
+          "effective_throughput_req_s": 87.01099279524855,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 9.509754180908203,
+            "std_dev_ms": 6.256952366984789,
+            "p95_ms": 25.886583328247067
+          },
+          "timestamp": "2025-09-20T00:46:52.866243"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 18.69668960571289,
+            "max_duration_ms": 28.476953506469727,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:46:55.464636"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 17.264080047607422,
+            "max_duration_ms": 28.26523780822754,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:46:58.056687"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 17.828655242919922,
+            "max_duration_ms": 30.323028564453125,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:47:00.650229"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 11.4837646484375,
+            "max_duration_ms": 27.171611785888672,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:47:03.212255"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:46:49.633073",
+      "execution_end": "2025-09-20T00:47:03.212255"
+    },
+    "medium_stress_run_13": {
+      "scenario_name": "medium_stress",
+      "chaos_config": {
+        "scenario_applied": "medium_stress",
+        "timestamp": "2025-09-20T00:47:15.221539",
+        "config": {
+          "name": "Medium Stress",
+          "latency_ms": 150,
+          "packet_loss": 0.03,
+          "description": "Moderate network degradation"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "medium_stress",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.0671164989471436,
+          "throughput_req_s": 96.75313418564805,
+          "latency_stats": {
+            "mean_ms": 14.934543371200562,
+            "median_ms": 16.539812088012695,
+            "std_dev_ms": 8.799839056026961,
+            "min_ms": 3.009796142578125,
+            "max_ms": 29.30593490600586,
+            "p95_ms": 27.339363098144528,
+            "p99_ms": 29.258897304534912
+          },
+          "timestamp": "2025-09-20T00:47:47.290142"
+        },
+        "concurrent_test": {
+          "scenario": "medium_stress",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.2133121490478516,
+          "effective_throughput_req_s": 82.41902141874631,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 12.67794132232666,
+            "std_dev_ms": 8.558747228895255,
+            "p95_ms": 27.705132961273193
+          },
+          "timestamp": "2025-09-20T00:47:48.503971"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 19.390249252319336,
+            "max_duration_ms": 27.034521102905273,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:47:51.106834"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 17.6328182220459,
+            "max_duration_ms": 25.526046752929688,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:47:53.700694"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 8.892059326171875,
+            "max_duration_ms": 24.037599563598633,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:47:56.249064"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 17.17705726623535,
+            "max_duration_ms": 24.9941349029541,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:47:58.839499"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:47:45.221969",
+      "execution_end": "2025-09-20T00:47:58.839499"
+    },
+    "high_stress_run_13": {
+      "scenario_name": "high_stress",
+      "chaos_config": {
+        "scenario_applied": "high_stress",
+        "timestamp": "2025-09-20T00:48:10.849399",
+        "config": {
+          "name": "High Stress",
+          "latency_ms": 300,
+          "packet_loss": 0.1,
+          "description": "Severe network conditions"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "high_stress",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.081106662750244,
+          "throughput_req_s": 96.10271476219968,
+          "latency_stats": {
+            "mean_ms": 14.795047044754028,
+            "median_ms": 15.853524208068848,
+            "std_dev_ms": 8.682934205608785,
+            "min_ms": 3.1168460845947266,
+            "max_ms": 30.436038970947266,
+            "p95_ms": 27.62666940689087,
+            "p99_ms": 28.907620906829834
+          },
+          "timestamp": "2025-09-20T00:48:42.931707"
+        },
+        "concurrent_test": {
+          "scenario": "high_stress",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.1933889389038086,
+          "effective_throughput_req_s": 83.79497809980988,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 11.555273532867432,
+            "std_dev_ms": 7.490155380878611,
+            "p95_ms": 26.48615837097168
+          },
+          "timestamp": "2025-09-20T00:48:44.126637"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 13.866472244262695,
+            "max_duration_ms": 27.48250961303711,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:48:46.701635"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 10.06312370300293,
+            "max_duration_ms": 19.01698112487793,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:48:49.256231"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 16.12248420715332,
+            "max_duration_ms": 26.856422424316406,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:48:51.841219"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 14.918804168701172,
+            "max_duration_ms": 26.03602409362793,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:48:54.420074"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:48:40.850074",
+      "execution_end": "2025-09-20T00:48:54.420074"
+    },
+    "baseline_run_14": {
+      "scenario_name": "baseline",
+      "chaos_config": {
+        "scenario_applied": "baseline",
+        "timestamp": "2025-09-20T00:49:06.429962",
+        "config": {
+          "name": "Baseline",
+          "latency_ms": 0,
+          "packet_loss": 0.0,
+          "description": "Normal network conditions"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "baseline",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.0827856063842773,
+          "throughput_req_s": 96.02524589518393,
+          "latency_stats": {
+            "mean_ms": 14.50204610824585,
+            "median_ms": 15.341758728027344,
+            "std_dev_ms": 8.079159728173845,
+            "min_ms": 3.0074119567871094,
+            "max_ms": 28.980731964111328,
+            "p95_ms": 25.870156288146973,
+            "p99_ms": 27.955548763275143
+          },
+          "timestamp": "2025-09-20T00:49:38.514245"
+        },
+        "concurrent_test": {
+          "scenario": "baseline",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.128861665725708,
+          "effective_throughput_req_s": 88.58481338872757,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 9.559881687164307,
+            "std_dev_ms": 4.874588363187928,
+            "p95_ms": 19.69262361526489
+          },
+          "timestamp": "2025-09-20T00:49:39.644635"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 19.724750518798828,
+            "max_duration_ms": 28.82981300354004,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:49:42.247141"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 13.270854949951172,
+            "max_duration_ms": 25.491714477539062,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:49:44.818127"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 13.611793518066406,
+            "max_duration_ms": 22.40467071533203,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:49:47.390888"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 13.670825958251953,
+            "max_duration_ms": 23.069143295288086,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:49:49.962805"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:49:36.430435",
+      "execution_end": "2025-09-20T00:49:49.962805"
+    },
+    "medium_stress_run_14": {
+      "scenario_name": "medium_stress",
+      "chaos_config": {
+        "scenario_applied": "medium_stress",
+        "timestamp": "2025-09-20T00:50:01.972213",
+        "config": {
+          "name": "Medium Stress",
+          "latency_ms": 150,
+          "packet_loss": 0.03,
+          "description": "Moderate network degradation"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "medium_stress",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.077308416366577,
+          "throughput_req_s": 96.27843339210085,
+          "latency_stats": {
+            "mean_ms": 17.22306251525879,
+            "median_ms": 18.312692642211914,
+            "std_dev_ms": 8.924891562618399,
+            "min_ms": 2.6535987854003906,
+            "max_ms": 30.138015747070312,
+            "p95_ms": 28.40549945831299,
+            "p99_ms": 28.936645984649658
+          },
+          "timestamp": "2025-09-20T00:50:34.050944"
+        },
+        "concurrent_test": {
+          "scenario": "medium_stress",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.2156593799591064,
+          "effective_throughput_req_s": 82.25988434635687,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 10.284390449523926,
+            "std_dev_ms": 6.159553026122537,
+            "p95_ms": 24.290776252746582
+          },
+          "timestamp": "2025-09-20T00:50:35.267637"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 22.762012481689453,
+            "max_duration_ms": 28.31125259399414,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:50:37.886472"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 16.645240783691406,
+            "max_duration_ms": 28.035640716552734,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:50:40.474427"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 18.96343231201172,
+            "max_duration_ms": 28.600454330444336,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:50:43.074001"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 22.145557403564453,
+            "max_duration_ms": 28.621435165405273,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:50:45.689101"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:50:31.972584",
+      "execution_end": "2025-09-20T00:50:45.689101"
+    },
+    "high_stress_run_14": {
+      "scenario_name": "high_stress",
+      "chaos_config": {
+        "scenario_applied": "high_stress",
+        "timestamp": "2025-09-20T00:50:57.701903",
+        "config": {
+          "name": "High Stress",
+          "latency_ms": 300,
+          "packet_loss": 0.1,
+          "description": "Severe network conditions"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "high_stress",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.091843366622925,
+          "throughput_req_s": 95.60945297872867,
+          "latency_stats": {
+            "mean_ms": 12.880316972732544,
+            "median_ms": 7.080316543579102,
+            "std_dev_ms": 8.806356451081738,
+            "min_ms": 3.152132034301758,
+            "max_ms": 30.149459838867188,
+            "p95_ms": 28.45127582550049,
+            "p99_ms": 29.69512701034546
+          },
+          "timestamp": "2025-09-20T00:51:29.795393"
+        },
+        "concurrent_test": {
+          "scenario": "high_stress",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.2005128860473633,
+          "effective_throughput_req_s": 83.29773146312962,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 11.969211101531982,
+            "std_dev_ms": 5.012003392623094,
+            "p95_ms": 23.10408353805542
+          },
+          "timestamp": "2025-09-20T00:51:30.997435"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 17.706298828125,
+            "max_duration_ms": 29.328107833862305,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:51:33.592097"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 10.775613784790039,
+            "max_duration_ms": 16.06440544128418,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:51:36.153804"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 15.911245346069336,
+            "max_duration_ms": 27.906417846679688,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:51:38.739920"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 13.767099380493164,
+            "max_duration_ms": 28.771400451660156,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:51:41.314506"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:51:27.702501",
+      "execution_end": "2025-09-20T00:51:41.314506"
+    },
+    "baseline_run_15": {
+      "scenario_name": "baseline",
+      "chaos_config": {
+        "scenario_applied": "baseline",
+        "timestamp": "2025-09-20T00:51:53.327791",
+        "config": {
+          "name": "Baseline",
+          "latency_ms": 0,
+          "packet_loss": 0.0,
+          "description": "Normal network conditions"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "baseline",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.075990676879883,
+          "throughput_req_s": 96.33954633196652,
+          "latency_stats": {
+            "mean_ms": 16.20415687561035,
+            "median_ms": 18.079280853271484,
+            "std_dev_ms": 8.11027609908516,
+            "min_ms": 3.131389617919922,
+            "max_ms": 28.79619598388672,
+            "p95_ms": 26.464772224426266,
+            "p99_ms": 28.38170051574707
+          },
+          "timestamp": "2025-09-20T00:52:25.405448"
+        },
+        "concurrent_test": {
+          "scenario": "baseline",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.2161366939544678,
+          "effective_throughput_req_s": 82.22759867135791,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 10.090169906616211,
+            "std_dev_ms": 6.670382455674673,
+            "p95_ms": 25.907456874847412
+          },
+          "timestamp": "2025-09-20T00:52:26.622640"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 9.136724472045898,
+            "max_duration_ms": 23.926973342895508,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:52:29.171943"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 11.060905456542969,
+            "max_duration_ms": 20.016908645629883,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:52:31.732043"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 20.4679012298584,
+            "max_duration_ms": 29.00409698486328,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:52:34.338009"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 11.119270324707031,
+            "max_duration_ms": 25.94614028930664,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:52:36.898804"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:52:23.328398",
+      "execution_end": "2025-09-20T00:52:36.898804"
+    },
+    "medium_stress_run_15": {
+      "scenario_name": "medium_stress",
+      "chaos_config": {
+        "scenario_applied": "medium_stress",
+        "timestamp": "2025-09-20T00:52:48.908907",
+        "config": {
+          "name": "Medium Stress",
+          "latency_ms": 150,
+          "packet_loss": 0.03,
+          "description": "Moderate network degradation"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "medium_stress",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.074662685394287,
+          "throughput_req_s": 96.40121327096132,
+          "latency_stats": {
+            "mean_ms": 15.14116644859314,
+            "median_ms": 17.22872257232666,
+            "std_dev_ms": 8.309365519220258,
+            "min_ms": 3.1249523162841797,
+            "max_ms": 28.86056900024414,
+            "p95_ms": 27.8073787689209,
+            "p99_ms": 28.37526559829712
+          },
+          "timestamp": "2025-09-20T00:53:20.984954"
+        },
+        "concurrent_test": {
+          "scenario": "medium_stress",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.1779687404632568,
+          "effective_throughput_req_s": 84.89189616413186,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 10.575571060180664,
+            "std_dev_ms": 7.672900479531336,
+            "p95_ms": 26.64152383804321
+          },
+          "timestamp": "2025-09-20T00:53:22.163930"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 11.499214172363281,
+            "max_duration_ms": 21.797657012939453,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:53:24.725859"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 21.724939346313477,
+            "max_duration_ms": 26.751995086669922,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:53:27.339852"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 15.798187255859375,
+            "max_duration_ms": 26.822805404663086,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:53:29.922668"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 12.75639533996582,
+            "max_duration_ms": 28.540611267089844,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:53:32.489926"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:53:18.909225",
+      "execution_end": "2025-09-20T00:53:32.489926"
+    },
+    "high_stress_run_15": {
+      "scenario_name": "high_stress",
+      "chaos_config": {
+        "scenario_applied": "high_stress",
+        "timestamp": "2025-09-20T00:53:44.500565",
+        "config": {
+          "name": "High Stress",
+          "latency_ms": 300,
+          "packet_loss": 0.1,
+          "description": "Severe network conditions"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "high_stress",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.0787527561187744,
+          "throughput_req_s": 96.21153810201973,
+          "latency_stats": {
+            "mean_ms": 15.640705823898315,
+            "median_ms": 17.33851432800293,
+            "std_dev_ms": 9.0405352572502,
+            "min_ms": 3.0059814453125,
+            "max_ms": 28.809785842895508,
+            "p95_ms": 27.69707441329956,
+            "p99_ms": 28.608763217926025
+          },
+          "timestamp": "2025-09-20T00:54:16.580681"
+        },
+        "concurrent_test": {
+          "scenario": "high_stress",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.2321150302886963,
+          "effective_throughput_req_s": 81.16125324481193,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 12.23858118057251,
+            "std_dev_ms": 7.262906234413925,
+            "p95_ms": 27.127087116241455
+          },
+          "timestamp": "2025-09-20T00:54:17.813323"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 17.02284812927246,
+            "max_duration_ms": 26.079177856445312,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:54:20.405168"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 19.939041137695312,
+            "max_duration_ms": 28.570890426635742,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:54:23.009525"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 11.90481185913086,
+            "max_duration_ms": 26.72433853149414,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:54:25.574501"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 12.456607818603516,
+            "max_duration_ms": 26.30782127380371,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:54:28.141852"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:54:14.500877",
+      "execution_end": "2025-09-20T00:54:28.141852"
+    },
+    "baseline_run_16": {
+      "scenario_name": "baseline",
+      "chaos_config": {
+        "scenario_applied": "baseline",
+        "timestamp": "2025-09-20T00:54:40.152539",
+        "config": {
+          "name": "Baseline",
+          "latency_ms": 0,
+          "packet_loss": 0.0,
+          "description": "Normal network conditions"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "baseline",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.1069283485412598,
+          "throughput_req_s": 94.92491765962085,
+          "latency_stats": {
+            "mean_ms": 15.17353892326355,
+            "median_ms": 15.959858894348145,
+            "std_dev_ms": 9.523367658383947,
+            "min_ms": 2.5103092193603516,
+            "max_ms": 55.45830726623535,
+            "p95_ms": 27.129912376403805,
+            "p99_ms": 45.777695178985546
+          },
+          "timestamp": "2025-09-20T00:55:12.261032"
+        },
+        "concurrent_test": {
+          "scenario": "baseline",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.2308523654937744,
+          "effective_throughput_req_s": 81.24451217988563,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 11.252679824829102,
+            "std_dev_ms": 7.36086576839436,
+            "p95_ms": 25.773096084594723
+          },
+          "timestamp": "2025-09-20T00:55:13.492409"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 10.393810272216797,
+            "max_duration_ms": 24.47962760925293,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:55:16.049793"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 8.827400207519531,
+            "max_duration_ms": 22.5522518157959,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:55:18.597784"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 25.655508041381836,
+            "max_duration_ms": 28.84054183959961,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:55:21.231000"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 20.969104766845703,
+            "max_duration_ms": 26.44824981689453,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:55:23.840822"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:55:10.153060",
+      "execution_end": "2025-09-20T00:55:23.840822"
+    },
+    "medium_stress_run_16": {
+      "scenario_name": "medium_stress",
+      "chaos_config": {
+        "scenario_applied": "medium_stress",
+        "timestamp": "2025-09-20T00:55:35.851438",
+        "config": {
+          "name": "Medium Stress",
+          "latency_ms": 150,
+          "packet_loss": 0.03,
+          "description": "Moderate network degradation"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "medium_stress",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.0795323848724365,
+          "throughput_req_s": 96.17546783829889,
+          "latency_stats": {
+            "mean_ms": 15.837239027023315,
+            "median_ms": 17.92311668395996,
+            "std_dev_ms": 8.83485302547453,
+            "min_ms": 2.6154518127441406,
+            "max_ms": 29.632568359375,
+            "p95_ms": 28.661203384399414,
+            "p99_ms": 29.142954349517822
+          },
+          "timestamp": "2025-09-20T00:56:07.931826"
+        },
+        "concurrent_test": {
+          "scenario": "medium_stress",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.208493709564209,
+          "effective_throughput_req_s": 82.74763799644491,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 10.884323120117188,
+            "std_dev_ms": 6.948789766968979,
+            "p95_ms": 24.466407299041744
+          },
+          "timestamp": "2025-09-20T00:56:09.141844"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 20.822668075561523,
+            "max_duration_ms": 27.838945388793945,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:56:11.751017"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 20.029592514038086,
+            "max_duration_ms": 26.677608489990234,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:56:14.354275"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 12.573862075805664,
+            "max_duration_ms": 26.450634002685547,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:56:16.922712"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 19.591569900512695,
+            "max_duration_ms": 28.336763381958008,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:56:19.525541"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:56:05.851763",
+      "execution_end": "2025-09-20T00:56:19.525541"
+    },
+    "high_stress_run_16": {
+      "scenario_name": "high_stress",
+      "chaos_config": {
+        "scenario_applied": "high_stress",
+        "timestamp": "2025-09-20T00:56:31.537040",
+        "config": {
+          "name": "High Stress",
+          "latency_ms": 300,
+          "packet_loss": 0.1,
+          "description": "Severe network conditions"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "high_stress",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.0848031044006348,
+          "throughput_req_s": 95.93232069629832,
+          "latency_stats": {
+            "mean_ms": 14.842289686203003,
+            "median_ms": 16.91114902496338,
+            "std_dev_ms": 8.880867579819386,
+            "min_ms": 3.131866455078125,
+            "max_ms": 28.8846492767334,
+            "p95_ms": 27.58780717849731,
+            "p99_ms": 28.26900482177734
+          },
+          "timestamp": "2025-09-20T00:57:03.623360"
+        },
+        "concurrent_test": {
+          "scenario": "high_stress",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.1366965770721436,
+          "effective_throughput_req_s": 87.9742246234047,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 9.863245487213135,
+            "std_dev_ms": 5.931046865172239,
+            "p95_ms": 24.132668972015377
+          },
+          "timestamp": "2025-09-20T00:57:04.761063"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 14.859962463378906,
+            "max_duration_ms": 21.373510360717773,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:57:07.340224"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 11.346244812011719,
+            "max_duration_ms": 21.29817008972168,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:57:09.900971"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 17.12641716003418,
+            "max_duration_ms": 27.59528160095215,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:57:12.491259"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 23.933792114257812,
+            "max_duration_ms": 27.38165855407715,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:57:15.114910"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:57:01.537527",
+      "execution_end": "2025-09-20T00:57:15.114910"
+    },
+    "baseline_run_17": {
+      "scenario_name": "baseline",
+      "chaos_config": {
+        "scenario_applied": "baseline",
+        "timestamp": "2025-09-20T00:57:27.126345",
+        "config": {
+          "name": "Baseline",
+          "latency_ms": 0,
+          "packet_loss": 0.0,
+          "description": "Normal network conditions"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "baseline",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.0794827938079834,
+          "throughput_req_s": 96.17776141044989,
+          "latency_stats": {
+            "mean_ms": 14.446883201599121,
+            "median_ms": 16.198039054870605,
+            "std_dev_ms": 8.754118519081587,
+            "min_ms": 2.9273033142089844,
+            "max_ms": 29.762744903564453,
+            "p95_ms": 27.08923816680908,
+            "p99_ms": 28.09833288192749
+          },
+          "timestamp": "2025-09-20T00:57:59.207180"
+        },
+        "concurrent_test": {
+          "scenario": "baseline",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.1403388977050781,
+          "effective_throughput_req_s": 87.69322891751663,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 10.062496662139893,
+            "std_dev_ms": 4.434936140863712,
+            "p95_ms": 17.72608757019043
+          },
+          "timestamp": "2025-09-20T00:58:00.348578"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 7.979106903076172,
+            "max_duration_ms": 18.103361129760742,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:58:02.893472"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 14.158010482788086,
+            "max_duration_ms": 28.825044631958008,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:58:05.467916"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 21.238136291503906,
+            "max_duration_ms": 28.55968475341797,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:58:08.077872"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 22.285079956054688,
+            "max_duration_ms": 28.054475784301758,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:58:10.693478"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:57:57.126649",
+      "execution_end": "2025-09-20T00:58:10.693478"
+    },
+    "medium_stress_run_17": {
+      "scenario_name": "medium_stress",
+      "chaos_config": {
+        "scenario_applied": "medium_stress",
+        "timestamp": "2025-09-20T00:58:22.708864",
+        "config": {
+          "name": "Medium Stress",
+          "latency_ms": 150,
+          "packet_loss": 0.03,
+          "description": "Moderate network degradation"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "medium_stress",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.0784528255462646,
+          "throughput_req_s": 96.22542188198832,
+          "latency_stats": {
+            "mean_ms": 16.695799827575684,
+            "median_ms": 18.574237823486328,
+            "std_dev_ms": 8.69480422161246,
+            "min_ms": 3.077268600463867,
+            "max_ms": 28.574705123901367,
+            "p95_ms": 27.732205390930176,
+            "p99_ms": 28.04247140884399
+          },
+          "timestamp": "2025-09-20T00:58:54.788615"
+        },
+        "concurrent_test": {
+          "scenario": "medium_stress",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.142848014831543,
+          "effective_throughput_req_s": 87.50069887004189,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 10.215449333190918,
+            "std_dev_ms": 6.342107247102545,
+            "p95_ms": 24.86269474029541
+          },
+          "timestamp": "2025-09-20T00:58:55.932503"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 19.81816291809082,
+            "max_duration_ms": 28.928279876708984,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:58:58.536120"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 21.680784225463867,
+            "max_duration_ms": 27.80890464782715,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:59:01.150208"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 19.196271896362305,
+            "max_duration_ms": 28.188228607177734,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:59:03.750212"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 14.141845703125,
+            "max_duration_ms": 28.64360809326172,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:59:06.326757"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:58:52.709090",
+      "execution_end": "2025-09-20T00:59:06.326757"
+    },
+    "high_stress_run_17": {
+      "scenario_name": "high_stress",
+      "chaos_config": {
+        "scenario_applied": "high_stress",
+        "timestamp": "2025-09-20T00:59:18.338151",
+        "config": {
+          "name": "High Stress",
+          "latency_ms": 300,
+          "packet_loss": 0.1,
+          "description": "Severe network conditions"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "high_stress",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.090998888015747,
+          "throughput_req_s": 95.64806616888733,
+          "latency_stats": {
+            "mean_ms": 14.018131494522095,
+            "median_ms": 15.722155570983887,
+            "std_dev_ms": 8.970888127395284,
+            "min_ms": 2.072572708129883,
+            "max_ms": 28.164148330688477,
+            "p95_ms": 26.889359951019284,
+            "p99_ms": 27.9447078704834
+          },
+          "timestamp": "2025-09-20T00:59:50.430157"
+        },
+        "concurrent_test": {
+          "scenario": "high_stress",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.124460220336914,
+          "effective_throughput_req_s": 88.93155861933266,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 8.341128826141357,
+            "std_dev_ms": 4.139306352805661,
+            "p95_ms": 14.979922771453857
+          },
+          "timestamp": "2025-09-20T00:59:51.555662"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 19.064760208129883,
+            "max_duration_ms": 26.1080265045166,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:59:54.156049"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 17.95487403869629,
+            "max_duration_ms": 28.324127197265625,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:59:56.750297"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 14.533567428588867,
+            "max_duration_ms": 27.2982120513916,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T00:59:59.326895"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 12.450265884399414,
+            "max_duration_ms": 28.27143669128418,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T01:00:01.895339"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T00:59:48.338635",
+      "execution_end": "2025-09-20T01:00:01.895339"
+    },
+    "baseline_run_18": {
+      "scenario_name": "baseline",
+      "chaos_config": {
+        "scenario_applied": "baseline",
+        "timestamp": "2025-09-20T01:00:13.912393",
+        "config": {
+          "name": "Baseline",
+          "latency_ms": 0,
+          "packet_loss": 0.0,
+          "description": "Normal network conditions"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "baseline",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.0720930099487305,
+          "throughput_req_s": 96.52076380729096,
+          "latency_stats": {
+            "mean_ms": 15.769892930984497,
+            "median_ms": 17.03166961669922,
+            "std_dev_ms": 8.935479285934154,
+            "min_ms": 3.107786178588867,
+            "max_ms": 28.441667556762695,
+            "p95_ms": 27.510488033294678,
+            "p99_ms": 28.215763568878174
+          },
+          "timestamp": "2025-09-20T01:00:45.986086"
+        },
+        "concurrent_test": {
+          "scenario": "baseline",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.1846373081207275,
+          "effective_throughput_req_s": 84.41402217750253,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 11.529955863952637,
+            "std_dev_ms": 7.313589826803314,
+            "p95_ms": 25.024485588073723
+          },
+          "timestamp": "2025-09-20T01:00:47.172317"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 8.615732192993164,
+            "max_duration_ms": 21.822214126586914,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T01:00:49.720028"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 17.10667610168457,
+            "max_duration_ms": 23.32901954650879,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T01:00:52.310782"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 11.832904815673828,
+            "max_duration_ms": 26.13091468811035,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T01:00:54.874738"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 15.532493591308594,
+            "max_duration_ms": 27.240276336669922,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T01:00:57.456546"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T01:00:43.912941",
+      "execution_end": "2025-09-20T01:00:57.456546"
+    },
+    "medium_stress_run_18": {
+      "scenario_name": "medium_stress",
+      "chaos_config": {
+        "scenario_applied": "medium_stress",
+        "timestamp": "2025-09-20T01:01:09.468838",
+        "config": {
+          "name": "Medium Stress",
+          "latency_ms": 150,
+          "packet_loss": 0.03,
+          "description": "Moderate network degradation"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "medium_stress",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.0737853050231934,
+          "throughput_req_s": 96.44199884894216,
+          "latency_stats": {
+            "mean_ms": 15.41463017463684,
+            "median_ms": 16.95084571838379,
+            "std_dev_ms": 8.839933998543248,
+            "min_ms": 2.0313262939453125,
+            "max_ms": 30.48110008239746,
+            "p95_ms": 27.81078815460205,
+            "p99_ms": 28.7902569770813
+          },
+          "timestamp": "2025-09-20T01:01:41.545004"
+        },
+        "concurrent_test": {
+          "scenario": "medium_stress",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.158336877822876,
+          "effective_throughput_req_s": 86.33067108072444,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 10.179638862609863,
+            "std_dev_ms": 6.212724147029825,
+            "p95_ms": 22.130942344665517
+          },
+          "timestamp": "2025-09-20T01:01:42.706919"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 12.160396575927734,
+            "max_duration_ms": 23.93960952758789,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T01:01:45.272696"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 17.44551658630371,
+            "max_duration_ms": 28.057575225830078,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T01:01:47.863866"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 22.227048873901367,
+            "max_duration_ms": 27.576446533203125,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T01:01:50.479064"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 10.580301284790039,
+            "max_duration_ms": 18.95761489868164,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T01:01:53.035836"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T01:01:39.469172",
+      "execution_end": "2025-09-20T01:01:53.035836"
+    },
+    "high_stress_run_18": {
+      "scenario_name": "high_stress",
+      "chaos_config": {
+        "scenario_applied": "high_stress",
+        "timestamp": "2025-09-20T01:02:05.047938",
+        "config": {
+          "name": "High Stress",
+          "latency_ms": 300,
+          "packet_loss": 0.1,
+          "description": "Severe network conditions"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "high_stress",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.0812768936157227,
+          "throughput_req_s": 96.09485437209061,
+          "latency_stats": {
+            "mean_ms": 15.121313333511353,
+            "median_ms": 15.738368034362793,
+            "std_dev_ms": 8.180292788741998,
+            "min_ms": 3.1006336212158203,
+            "max_ms": 29.134273529052734,
+            "p95_ms": 27.614986896514885,
+            "p99_ms": 28.785152435302734
+          },
+          "timestamp": "2025-09-20T01:02:37.130287"
+        },
+        "concurrent_test": {
+          "scenario": "high_stress",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.2070724964141846,
+          "effective_throughput_req_s": 82.84506547623867,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 12.20454454421997,
+            "std_dev_ms": 6.853756259631345,
+            "p95_ms": 25.71052312850952
+          },
+          "timestamp": "2025-09-20T01:02:38.337878"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 11.86370849609375,
+            "max_duration_ms": 28.373241424560547,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T01:02:40.901854"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 9.479570388793945,
+            "max_duration_ms": 16.853809356689453,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T01:02:43.453515"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 20.619583129882812,
+            "max_duration_ms": 28.509140014648438,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T01:02:46.061524"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 16.170120239257812,
+            "max_duration_ms": 28.349637985229492,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T01:02:48.645883"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T01:02:35.048480",
+      "execution_end": "2025-09-20T01:02:48.645883"
+    },
+    "baseline_run_19": {
+      "scenario_name": "baseline",
+      "chaos_config": {
+        "scenario_applied": "baseline",
+        "timestamp": "2025-09-20T01:03:00.658542",
+        "config": {
+          "name": "Baseline",
+          "latency_ms": 0,
+          "packet_loss": 0.0,
+          "description": "Normal network conditions"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "baseline",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.0807645320892334,
+          "throughput_req_s": 96.11851649508174,
+          "latency_stats": {
+            "mean_ms": 13.267874717712402,
+            "median_ms": 14.72938060760498,
+            "std_dev_ms": 8.832506129491197,
+            "min_ms": 3.007173538208008,
+            "max_ms": 29.414892196655273,
+            "p95_ms": 26.845014095306396,
+            "p99_ms": 28.063805103302
+          },
+          "timestamp": "2025-09-20T01:03:32.740359"
+        },
+        "concurrent_test": {
+          "scenario": "baseline",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.1610989570617676,
+          "effective_throughput_req_s": 86.12530343930044,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 11.903247833251953,
+            "std_dev_ms": 8.279312911734328,
+            "p95_ms": 25.008118152618405
+          },
+          "timestamp": "2025-09-20T01:03:33.902989"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 17.76442527770996,
+            "max_duration_ms": 28.301000595092773,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T01:03:36.497206"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 13.336420059204102,
+            "max_duration_ms": 28.133869171142578,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T01:03:39.068361"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 17.35672950744629,
+            "max_duration_ms": 28.95641326904297,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T01:03:41.659108"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 14.82090950012207,
+            "max_duration_ms": 27.661561965942383,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T01:03:44.238657"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T01:03:30.659068",
+      "execution_end": "2025-09-20T01:03:44.238657"
+    },
+    "medium_stress_run_19": {
+      "scenario_name": "medium_stress",
+      "chaos_config": {
+        "scenario_applied": "medium_stress",
+        "timestamp": "2025-09-20T01:03:56.251508",
+        "config": {
+          "name": "Medium Stress",
+          "latency_ms": 150,
+          "packet_loss": 0.03,
+          "description": "Moderate network degradation"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "medium_stress",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.0875232219696045,
+          "throughput_req_s": 95.80731744449649,
+          "latency_stats": {
+            "mean_ms": 14.668978452682495,
+            "median_ms": 15.82944393157959,
+            "std_dev_ms": 8.551601782796828,
+            "min_ms": 3.006458282470703,
+            "max_ms": 30.3800106048584,
+            "p95_ms": 26.77292823791504,
+            "p99_ms": 28.503549098968502
+          },
+          "timestamp": "2025-09-20T01:04:28.340581"
+        },
+        "concurrent_test": {
+          "scenario": "medium_stress",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.2304432392120361,
+          "effective_throughput_req_s": 81.27152623800755,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 10.515203475952148,
+            "std_dev_ms": 5.675783181587229,
+            "p95_ms": 23.17686080932617
+          },
+          "timestamp": "2025-09-20T01:04:29.571552"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 9.227228164672852,
+            "max_duration_ms": 16.795635223388672,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T01:04:32.122673"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 13.217973709106445,
+            "max_duration_ms": 20.053386688232422,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T01:04:34.694045"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 18.888139724731445,
+            "max_duration_ms": 28.380870819091797,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T01:04:37.292722"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 13.701963424682617,
+            "max_duration_ms": 29.587507247924805,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T01:04:39.866054"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T01:04:26.252005",
+      "execution_end": "2025-09-20T01:04:39.866054"
+    },
+    "high_stress_run_19": {
+      "scenario_name": "high_stress",
+      "chaos_config": {
+        "scenario_applied": "high_stress",
+        "timestamp": "2025-09-20T01:04:51.881288",
+        "config": {
+          "name": "High Stress",
+          "latency_ms": 300,
+          "packet_loss": 0.1,
+          "description": "Severe network conditions"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "high_stress",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.0800232887268066,
+          "throughput_req_s": 96.1527695790469,
+          "latency_stats": {
+            "mean_ms": 14.715152978897095,
+            "median_ms": 15.971541404724121,
+            "std_dev_ms": 8.973536363455995,
+            "min_ms": 3.142833709716797,
+            "max_ms": 31.835556030273438,
+            "p95_ms": 27.105820178985596,
+            "p99_ms": 28.499660491943345
+          },
+          "timestamp": "2025-09-20T01:05:23.963018"
+        },
+        "concurrent_test": {
+          "scenario": "high_stress",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.2193772792816162,
+          "effective_throughput_req_s": 82.00907274483086,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 11.32401704788208,
+            "std_dev_ms": 7.958095152682072,
+            "p95_ms": 24.643206596374508
+          },
+          "timestamp": "2025-09-20T01:05:25.182900"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 14.638853073120117,
+            "max_duration_ms": 26.8247127532959,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T01:05:27.762031"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 15.436124801635742,
+            "max_duration_ms": 26.037931442260742,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T01:05:30.343587"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 12.482690811157227,
+            "max_duration_ms": 21.385908126831055,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T01:05:32.910513"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 11.690855026245117,
+            "max_duration_ms": 18.346071243286133,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T01:05:35.472385"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T01:05:21.881953",
+      "execution_end": "2025-09-20T01:05:35.472385"
+    },
+    "baseline_run_20": {
+      "scenario_name": "baseline",
+      "chaos_config": {
+        "scenario_applied": "baseline",
+        "timestamp": "2025-09-20T01:05:47.484820",
+        "config": {
+          "name": "Baseline",
+          "latency_ms": 0,
+          "packet_loss": 0.0,
+          "description": "Normal network conditions"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "baseline",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.0732715129852295,
+          "throughput_req_s": 96.46589882095431,
+          "latency_stats": {
+            "mean_ms": 16.177093982696533,
+            "median_ms": 17.548799514770508,
+            "std_dev_ms": 8.246872853732187,
+            "min_ms": 3.0100345611572266,
+            "max_ms": 29.73151206970215,
+            "p95_ms": 27.140498161315918,
+            "p99_ms": 28.565118312835693
+          },
+          "timestamp": "2025-09-20T01:06:19.559127"
+        },
+        "concurrent_test": {
+          "scenario": "baseline",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.18544602394104,
+          "effective_throughput_req_s": 84.35643460808778,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 10.411989688873291,
+            "std_dev_ms": 7.287696489484043,
+            "p95_ms": 24.534165859222412
+          },
+          "timestamp": "2025-09-20T01:06:20.746096"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 23.108959197998047,
+            "max_duration_ms": 29.521942138671875,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T01:06:23.366128"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 16.526269912719727,
+            "max_duration_ms": 29.284238815307617,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T01:06:25.955712"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 26.929140090942383,
+            "max_duration_ms": 28.88178825378418,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T01:06:28.594918"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 9.3414306640625,
+            "max_duration_ms": 25.429487228393555,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T01:06:31.146243"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T01:06:17.485326",
+      "execution_end": "2025-09-20T01:06:31.146243"
+    },
+    "medium_stress_run_20": {
+      "scenario_name": "medium_stress",
+      "chaos_config": {
+        "scenario_applied": "medium_stress",
+        "timestamp": "2025-09-20T01:06:43.159443",
+        "config": {
+          "name": "Medium Stress",
+          "latency_ms": 150,
+          "packet_loss": 0.03,
+          "description": "Moderate network degradation"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "medium_stress",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.0783705711364746,
+          "throughput_req_s": 96.22923013706739,
+          "latency_stats": {
+            "mean_ms": 15.29526948928833,
+            "median_ms": 17.36629009246826,
+            "std_dev_ms": 8.940291905847086,
+            "min_ms": 3.0455589294433594,
+            "max_ms": 28.911113739013672,
+            "p95_ms": 27.574312686920166,
+            "p99_ms": 28.49521398544311
+          },
+          "timestamp": "2025-09-20T01:07:15.239429"
+        },
+        "concurrent_test": {
+          "scenario": "medium_stress",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.1975388526916504,
+          "effective_throughput_req_s": 83.50459759634087,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 11.683385372161865,
+            "std_dev_ms": 8.521002125828575,
+            "p95_ms": 26.363277435302734
+          },
+          "timestamp": "2025-09-20T01:07:16.437498"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 19.81024742126465,
+            "max_duration_ms": 27.553796768188477,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T01:07:19.041708"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 14.326858520507812,
+            "max_duration_ms": 28.29909324645996,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T01:07:21.617035"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 12.467765808105469,
+            "max_duration_ms": 26.826858520507812,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T01:07:24.184637"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 12.873697280883789,
+            "max_duration_ms": 27.116775512695312,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T01:07:26.754061"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T01:07:13.160004",
+      "execution_end": "2025-09-20T01:07:26.754061"
+    },
+    "high_stress_run_20": {
+      "scenario_name": "high_stress",
+      "chaos_config": {
+        "scenario_applied": "high_stress",
+        "timestamp": "2025-09-20T01:07:38.767529",
+        "config": {
+          "name": "High Stress",
+          "latency_ms": 300,
+          "packet_loss": 0.1,
+          "description": "Severe network conditions"
+        },
+        "chaos_mode": "simulated"
+      },
+      "tests": {
+        "load_test": {
+          "scenario": "high_stress",
+          "total_requests": 200,
+          "successful_requests": 200,
+          "success_rate": 1.0,
+          "total_duration_s": 2.0843331813812256,
+          "throughput_req_s": 95.95394910302485,
+          "latency_stats": {
+            "mean_ms": 15.081875324249268,
+            "median_ms": 16.698002815246582,
+            "std_dev_ms": 8.633302906071572,
+            "min_ms": 3.0083656311035156,
+            "max_ms": 28.69892120361328,
+            "p95_ms": 27.31070518493652,
+            "p99_ms": 28.35184097290039
+          },
+          "timestamp": "2025-09-20T01:08:10.853291"
+        },
+        "concurrent_test": {
+          "scenario": "high_stress",
+          "total_requests": 100,
+          "successful_requests": 100,
+          "success_rate": 1.0,
+          "total_duration_s": 1.2147581577301025,
+          "effective_throughput_req_s": 82.32091249081219,
+          "concurrency_level": 10,
+          "latency_stats": {
+            "mean_ms": 13.152358531951904,
+            "std_dev_ms": 8.793363809479386,
+            "p95_ms": 26.226413249969482
+          },
+          "timestamp": "2025-09-20T01:08:12.068576"
+        },
+        "resilience_test": {
+          "Normal Operation": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 19.321060180664062,
+            "max_duration_ms": 27.062177658081055,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T01:08:14.671124"
+          },
+          "Inventory Overflow": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 15.963983535766602,
+            "max_duration_ms": 25.79665184020996,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T01:08:17.254868"
+          },
+          "Invalid Product": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 12.81275749206543,
+            "max_duration_ms": 28.223514556884766,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T01:08:19.823773"
+          },
+          "Zero Quantity": {
+            "iterations": 5,
+            "successful_iterations": 5,
+            "success_rate": 1.0,
+            "avg_duration_ms": 9.440994262695312,
+            "max_duration_ms": 26.672840118408203,
+            "consistent_behavior": true,
+            "timestamp": "2025-09-20T01:08:22.374718"
+          }
+        }
+      },
+      "execution_start": "2025-09-20T01:08:08.767900",
+      "execution_end": "2025-09-20T01:08:22.374718"
+    }
+  },
+  "summary_stats": {},
+  "execution_metadata": {}
+}
